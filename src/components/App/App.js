@@ -1,11 +1,19 @@
 import "./App.css";
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
-import LandingRoute from "../../routes/LandingRoute";
+import LandingRoute from "../../routes/LandingRoute/LandingRoute";
 import NotFoundRoute from "../../routes/NotFoundRoute/NotFoundRoute";
 
 export default class App extends Component {
+	state = { hasError: false };
+
+	static getDerivedStateFromError(error) {
+		console.error(error);
+		return { hasError: true };
+	}
+
 	render() {
+		const { hasError } = this.state;
 		return (
 			<div className="App" id="App">
 				<main>
@@ -16,7 +24,7 @@ export default class App extends Component {
 						</p>
 					)}
 					<Switch>
-						<Route component={LandingRoute} />
+						<Route exact path={"/"} component={LandingRoute} />
 						<Route component={NotFoundRoute} />
 					</Switch>
 				</main>
