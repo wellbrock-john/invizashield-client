@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import LandingRoute from "../../routes/LandingRoute/LandingRoute";
 import NotFoundRoute from "../../routes/NotFoundRoute/NotFoundRoute";
+import Header from "../Header/Header";
 
 export default class App extends Component {
 	state = { hasError: false };
@@ -16,6 +17,7 @@ export default class App extends Component {
 		const { hasError } = this.state;
 		return (
 			<div className="App" id="App">
+				<Header />
 				<main>
 					{hasError && (
 						<p>
