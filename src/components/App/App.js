@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import LandingRoute from "../../routes/LandingRoute/LandingRoute";
 import NotFoundRoute from "../../routes/NotFoundRoute/NotFoundRoute";
 import Header from "../Header/Header";
+import Menu from "../../routes/Menu/Menu";
 
 export default class App extends Component {
 	state = { hasError: false };
@@ -27,6 +28,7 @@ export default class App extends Component {
 					)}
 					<Switch>
 						<Route exact path={"/"} component={LandingRoute} />
+						<Route path={"/menu"} component={Menu} />
 						<Route component={NotFoundRoute} />
 					</Switch>
 				</main>

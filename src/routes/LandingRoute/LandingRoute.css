@@ -6,6 +6,20 @@
     height: 100vh;
 }
 
+.paragraph-plus-form-div {
+    display: flex;
+    flex-direction: column;
+    height: 25rem;
+}
+
+.login-signup {
+    border: solid black 1px;
+    border-radius: 0 20px 20px 20px;
+    background-color: rgb(70, 70, 70);
+    height: -webkit-fill-available;
+    margin: 0 5px;
+}
+
 .replace-with-route {
     height: 30%;
     width: 45%;
