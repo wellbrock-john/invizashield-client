@@ -3,7 +3,6 @@ import { MenuItems } from "../Menu/MenuItems";
 import logo from "../../components/Logo/InvizaShield-Logo.jpg";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import { NavButton } from "../NavButton/NavButton";
 
 export default class Navbar extends Component {
 	state = { clicked: false };
@@ -35,7 +34,6 @@ export default class Navbar extends Component {
 						);
 					})}
 				</ul>
-				<NavButton>Sign Up</NavButton>
 			</nav>
 		);
 	}
