@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { MenuItems } from "../Menu/MenuItems";
+import logo from "../../components/Logo/InvizaShield-Logo.jpg";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 export default class Navbar extends Component {
   state = { clicked: false}
@@ -10,8 +13,8 @@ export default class Navbar extends Component {
 
   render() {
     return (
-      <nav className="Navbar">
-        <h1 className="navbar-logo">React</h1>
+      <nav className="NavbarItems">
+        <Link id="navbar-logo" className="navbar-logo" to="/"><img src={logo} alt="Logo" /></Link>
         <div className="menu-icon" onClick={this.handleClick}>
           <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
         </div>

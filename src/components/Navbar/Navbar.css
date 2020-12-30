@@ -1,4 +1,62 @@
-ul {
+.NavbarItems {
     display: flex;
-    flex-direction: row;
+    height: 5rem;
+    cursor: pointer;
+}
+
+.navbar-logo {
+    width: 100%;
+    text-align: left;
+    align-self: flex-start;
+}
+
+.nav-menu {
+    height: 100%;
+    width: 70vw;
+    background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(223, 219, 1) 100%);
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 10px;
+    list-style: none;
+    text-align: center;
+    justify-content: end;
+    font-size: 1.2rem;
+}
+
+@media all and (min-width: 500px) {
+    img {
+        width: 250px;
+    }
+}
+
+@media all and (min-width: 600px) {
+    img {
+        width: 275px;
+    }
+}
+
+@media all and (min-width: 730px) {
+    .NavbarItems {
+        height: 7rem;
+    }
+    
+    img {
+        width: 350px;
+    }
+}
+
+@media all and (min-width: 1025px) {
+    img {
+        width: 400px;
+    }
+}
+
+@media all and (min-width: 1441px) {
+    .NavbarItems {
+        height: 8rem;
+    }
+    
+    img {
+        width: 500px;
+    }
 }
