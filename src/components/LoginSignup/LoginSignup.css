@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: space-around;
     width: 400px;
-    height: 400px;
+    height: 420px;
     align-items: center;
     border: solid black 1px;
     border-radius: 5px;
@@ -32,6 +32,7 @@
   /*INPUT STYLING*/
   input[type="text"],
   input[type="password"],
+  input[type="email"],
   textarea,
   select {
     height: 38px;
@@ -43,6 +44,7 @@
     box-sizing: border-box; }
   input[type="text"]:focus,
   input[type="password"]:focus,
+  input[type="email"]:focus
   textarea:focus {
     border: 1px solid gold;
     outline: 0; }
