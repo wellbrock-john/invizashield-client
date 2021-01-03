@@ -1,34 +1,36 @@
 import "./App.css";
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
+import PrivateRoute from "../../routes/PrivateRoute/PrivateRoute";
 import LandingRoute from "../../routes/LandingRoute/LandingRoute";
 import NotFoundRoute from "../../routes/NotFoundRoute/NotFoundRoute";
 import Header from "../Header/Header";
 import TokenService from "../../services/token-service";
 import Config from "../../config";
+import Dashboard from "../../routes/Dashboard/Dashboard";
 
 export default class App extends Component {
 	state = { 
 		hasError: false,
 		users: [],
 		
-		getData: () => {
-			const options = {
-				method: "GET",
-				headers: {
-					Authorization: `Bearer ${TokenService.getAuthToken()}`,
-					Accept: "application/json",
-				},
-			};
-			fetch(`${Config.API_ENDPOINT}/api/users`, options)
-				.then((res) => {
-					if (!res.ok) {
-						return Promise.reject(res.statusText);
-					}
-					return res.json();
-				})
-				.then((user) => this.setState({ user }));
-		},
+		// getData: () => {
+		// 	const options = {
+		// 		method: "GET",
+		// 		headers: {
+		// 			Authorization: `Bearer ${TokenService.getAuthToken()}`,
+		// 			Accept: "application/json",
+		// 		},
+		// 	};
+		// 	fetch(`${Config.API_ENDPOINT}/users`, options)
+		// 		.then((res) => {
+		// 			if (!res.ok) {
+		// 				return Promise.reject(res.statusText);
+		// 			}
+		// 			return res.json();
+		// 		})
+		// 		.then((user) => this.setState({ user }));
+		// },
 	};
 
 	static getDerivedStateFromError(error) {
@@ -36,11 +38,11 @@ export default class App extends Component {
 		return { hasError: true };
 	}
 
-	componentDidMount() {
-		if (TokenService.hasAuthToken()) {
-			this.state.getData();
-		}
-	}
+	// componentDidMount() {
+	// 	if (TokenService.hasAuthToken()) {
+	// 		this.state.getData();
+	// 	}
+	// }
 
 	render() {
 		const { hasError } = this.state;
@@ -55,7 +57,8 @@ export default class App extends Component {
 						</p>
 					)}
 					<Switch>
-						<Route exact path={"/"} component={LandingRoute} />
+						<PrivateRoute exact path={"/"} component={Dashboard} />
+						<Route path={"/landing"} component={LandingRoute} />
 						<Route component={NotFoundRoute} />
 					</Switch>
 				</main>

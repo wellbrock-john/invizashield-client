@@ -25,8 +25,8 @@ export class UserProvider extends Component {
 		if (jwtPayload)
 			state.user = {
 				id: jwtPayload.user_id,
-				name: jwtPayload.name,
-				username: jwtPayload.sub,
+				first_name: jwtPayload.first_name,
+				email: jwtPayload.sub,
 			};
 
 		this.state = state;
@@ -65,8 +65,8 @@ export class UserProvider extends Component {
 		const jwtPayload = TokenService.parseAuthToken();
 		this.setUser({
 			id: jwtPayload.user_id,
-			name: jwtPayload.name,
-			username: jwtPayload.sub,
+			first_name: jwtPayload.first_name,
+			email: jwtPayload.sub,
 		});
 		IdleService.registerIdleTimerResets();
 		TokenService.queueCallbackBeforeExpiry(() => {
