@@ -1,18 +1,39 @@
 .dashboard-container {
     display: flex;
     flex-direction: row;
-    width: 75vw;
-    min-height: 600px;
+    justify-content: left;
+    margin: 5% 20%;
+    min-height: 500px;
 }
 
 .sidebar {
-    height: 100%;
     width: 15%;
+}
+
+.dashboard-ul {
+    height: 500px;
+    list-style: none;
+    border: solid gold 8px;
+    border-right: 0;
+    background-color: maroon;
+    border-radius: 10px 0 0 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-ul li {
+    line-height: 3rem;
+    text-align: center;
+    color: white;
 }
 
 .dashboard-main {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    border: solid gold 8px;
+    border-radius: 0 10px 10px 0;
+    background-color: lightslategray;
 }
 
 .greeting-div {
@@ -22,4 +43,6 @@
 .dashboard-content {
     width: 100%;
     height: 100%;
+    text-decoration: line-through;
+    font-size: 200px;
 }

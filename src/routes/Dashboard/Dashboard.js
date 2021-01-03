@@ -9,7 +9,7 @@ export default class Dashboard extends Component {
     return (
       <section className="dashboard-container">
         <div className="sidebar">
-          <ul>
+          <ul className="dashboard-ul">
             <li>Account</li>
             <li>Schedule</li>
             <li>Contact</li>
@@ -19,7 +19,7 @@ export default class Dashboard extends Component {
           <div className="greeting-div">
             <h2 className="greeting">Hello {this.context.user.first_name}</h2>
           </div>
-          <div className="dashboard-content">DB</div>
+          <div className="dashboard-content">Replace</div>
         </div>
       </section>
     );
