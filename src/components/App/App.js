@@ -8,6 +8,7 @@ import Header from "../Header/Header";
 import TokenService from "../../services/token-service";
 import Config from "../../config";
 import Dashboard from "../../routes/Dashboard/Dashboard";
+import PublicOnlyRoute from "../../routes/PublicOnlyRoute/PublicOnlyRoute";
 
 export default class App extends Component {
 	state = { 
@@ -58,7 +59,7 @@ export default class App extends Component {
 					)}
 					<Switch>
 						<PrivateRoute exact path={"/"} component={Dashboard} />
-						<Route path={"/landing"} component={LandingRoute} />
+						<PublicOnlyRoute path={"/landing"} component={LandingRoute} />
 						<Route component={NotFoundRoute} />
 					</Switch>
 				</main>

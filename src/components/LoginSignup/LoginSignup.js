@@ -4,6 +4,11 @@ import AuthAPIService from "../../services/auth-api-service";
 import "./LoginSignup.css";
 
 export default class LoginSignup extends Component {
+  static defaultProps = {
+    history: {
+      push: () => {},
+    },
+  };
 
   static contextType = UserContext;
 
@@ -15,12 +20,6 @@ export default class LoginSignup extends Component {
     login: "register",
     register: "login",
   };
-
-//   handleLoginSuccess = () => {
-//       const { location, history } = this.props;
-//       const destination = (location.state || {}).from || "/";
-//       history.push(destination)
-//   }
 
   onSubmit = async (e) => {
     e.preventDefault();
@@ -56,7 +55,6 @@ export default class LoginSignup extends Component {
         password.value = "";
 
         this.context.processLogin(authToken);
-        return this.props.history.push("/");
       } catch ({ error }) {
         return this.setState({ error });
       }
@@ -69,8 +67,6 @@ export default class LoginSignup extends Component {
           email.value = "";
           password.value = "";
           this.context.processLogin(res.authToken);
-          console.log(this.history);
-          return this.props.history.push("/");
         })
         .catch((res) => {
           this.setState({ error: res.error });
