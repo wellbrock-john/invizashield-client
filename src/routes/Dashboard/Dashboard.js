@@ -10,9 +10,9 @@ export default class Dashboard extends Component {
       <section className="dashboard-container">
         <div className="sidebar">
           <ul className="dashboard-ul">
-            <li>Account</li>
-            <li>Schedule</li>
-            <li>Contact</li>
+            <li><button className="li-btn">Account</button></li>
+            <li><button className="li-btn">Schedule</button></li>
+            <li><button className="li-btn">Contact</button></li>
           </ul>
         </div>
         <div className="dashboard-main">
