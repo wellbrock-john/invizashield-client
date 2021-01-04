@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Account from "../../components/Account/Account";
 import UserContext from "../../contexts/UserContext";
 import "./Dashboard.css";
 
@@ -16,10 +17,7 @@ export default class Dashboard extends Component {
           </ul>
         </div>
         <div className="dashboard-main">
-          <div className="greeting-div">
-            <h2 className="greeting">Hello {this.context.user.first_name}</h2>
-          </div>
-          <div className="dashboard-content">Replace</div>
+          <Account />
         </div>
       </section>
     );
