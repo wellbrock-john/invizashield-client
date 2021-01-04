@@ -1,0 +1,6 @@
+.reviews-ul {
+    list-style: none;
+    border: solid maroon;
+    border-radius: 15px;
+    background-color: silver;
+}
