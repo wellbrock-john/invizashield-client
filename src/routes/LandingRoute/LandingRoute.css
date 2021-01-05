@@ -3,7 +3,6 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    height: 100vh;
 }
 
 .paragraph-plus-form-div {
@@ -21,10 +20,6 @@
     width: 500px;
 }
 
-.replace-with-route {
-    height: 30%;
-    width: 45%;
-    border: solid black 1px;
-    border-radius: 0 20px 20px 20px;
-    background-color: rgb(70, 70, 70);
+.reviews-div {
+    margin: 10rem 10rem 0 10rem;
 }
