@@ -14,15 +14,15 @@ import GalleryRoute from "../../routes/GalleryRoute/GalleryRoute";
 import ContactRoute from "../../routes/ContactRoute/ContactRoute";
 
 export default class App extends Component {
-	state = { 
+	state = {
 		hasError: false,
 		user: {},
-		
-		getData: () => {
+
+		getData: (user) => {
 			const options = {
 				method: "GET",
 				headers: {
-					Authorization: `Bearer ${Config.TOKEN_KEY}`,
+					Authorization: `Bearer ${TokenService.getAuthToken(user)}`,
 					Accept: "application/json",
 				},
 			};
@@ -52,25 +52,29 @@ export default class App extends Component {
 		const { hasError } = this.state;
 		return (
 			<Context.Provider value={this.state}>
-			<div className="App" id="App">
-				<Header />
-				<main>
-					{hasError && (
-						<p>
-							There was an error. Don't worry, we're on it! We're sorry for the
-							inconvenience.
-						</p>
-					)}
-					<Switch>
-						<PrivateRoute exact path={"/"} component={Dashboard} />
-						<Route path={"/landing"} component={LandingRoute} {...this.props}/>
-						<Route path={"/services"} component={ServicesRoute} />
-						<Route path={"/gallery"} component={GalleryRoute} />
-						<Route path={"/contact"} component={ContactRoute} />
-						<Route component={NotFoundRoute} />
-					</Switch>
-				</main>
-			</div>
+				<div className="App" id="App">
+					<Header />
+					<main>
+						{hasError && (
+							<p>
+								There was an error. Don't worry, we're on it! We're sorry for
+								the inconvenience.
+							</p>
+						)}
+						<Switch>
+							<PrivateRoute exact path={"/"} component={Dashboard} />
+							<Route
+								path={"/landing"}
+								component={LandingRoute}
+								{...this.props}
+							/>
+							<Route path={"/services"} component={ServicesRoute} />
+							<Route path={"/gallery"} component={GalleryRoute} />
+							<Route path={"/contact"} component={ContactRoute} />
+							<Route component={NotFoundRoute} />
+						</Switch>
+					</main>
+				</div>
 			</Context.Provider>
 		);
 	}
