@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Account from "../../components/Account/Account";
 import Contact from "../../components/Contact/Contact";
 import Schedule from "../../components/Schedule/Schedule";
-import UserContext from "../../contexts/UserContext";
+import Context from "../../Context";
 import "./Dashboard.css";
 
 export default class Dashboard extends Component {
@@ -12,7 +12,7 @@ export default class Dashboard extends Component {
     contactClicked: false,
   }
 
-  static contextType = UserContext;
+  static contextType = Context;
 
   handleAccountClicked = (e) => {
     e.preventDefault();

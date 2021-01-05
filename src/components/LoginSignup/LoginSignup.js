@@ -1,16 +1,13 @@
 import React, { Component } from "react";
-import UserContext from "../../contexts/UserContext";
+import { withRouter } from "react-router";
 import AuthAPIService from "../../services/auth-api-service";
+import Context from "../../Context";
+import TokenService from "../../services/token-service";
 import "./LoginSignup.css";
 
-export default class LoginSignup extends Component {
-  static defaultProps = {
-    history: {
-      push: () => {},
-    },
-  };
+class LoginSignup extends Component {
 
-  static contextType = UserContext;
+  static contextType = Context;
 
   state = {
     form: "login",
@@ -21,6 +18,7 @@ export default class LoginSignup extends Component {
     register: "login",
   };
 
+
   onSubmit = async (e) => {
     e.preventDefault();
     const {
@@ -30,6 +28,7 @@ export default class LoginSignup extends Component {
       password,
       confirmPassword,
     } = e.target;
+    const { history } = this.props;
     this.setState({ error: null });
     if (this.state.form === "register") {
       if (password.value !== confirmPassword.value) {
@@ -43,8 +42,11 @@ export default class LoginSignup extends Component {
           last_name: last_name.value,
           email: email.value,
           password: password.value,
+        })
+        .then((response) => {
+          TokenService.saveAuthToken(response.authToken)
         });
-        const { authToken } = await AuthAPIService.postLogin({
+         await AuthAPIService.postLogin({
           email: email.value,
           password: password.value,
         });
@@ -54,7 +56,8 @@ export default class LoginSignup extends Component {
         email.value = "";
         password.value = "";
 
-        this.context.processLogin(authToken);
+        this.context.getData();
+        history.push("/");
       } catch ({ error }) {
         return this.setState({ error });
       }
@@ -63,10 +66,11 @@ export default class LoginSignup extends Component {
         email: email.value,
         password: password.value,
       })
-        .then((res) => {
+        .then((response) => {
           email.value = "";
           password.value = "";
-          this.context.processLogin(res.authToken);
+          TokenService.saveAuthToken(response.authToken);
+          history.push("/");
         })
         .catch((res) => {
           this.setState({ error: res.error });
@@ -169,3 +173,5 @@ export default class LoginSignup extends Component {
     );
   }
 }
+
+export default withRouter(LoginSignup);

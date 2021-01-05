@@ -7,8 +7,8 @@ import NotFoundRoute from "../../routes/NotFoundRoute/NotFoundRoute";
 import Header from "../Header/Header";
 import TokenService from "../../services/token-service";
 import Config from "../../config";
+import Context from "../../Context";
 import Dashboard from "../../routes/Dashboard/Dashboard";
-import PublicOnlyRoute from "../../routes/PublicOnlyRoute/PublicOnlyRoute";
 import ServicesRoute from "../../routes/ServicesRoute/ServicesRoute";
 import GalleryRoute from "../../routes/GalleryRoute/GalleryRoute";
 import ContactRoute from "../../routes/ContactRoute/ContactRoute";
@@ -16,25 +16,25 @@ import ContactRoute from "../../routes/ContactRoute/ContactRoute";
 export default class App extends Component {
 	state = { 
 		hasError: false,
-		users: [],
+		user: {},
 		
-		// getData: () => {
-		// 	const options = {
-		// 		method: "GET",
-		// 		headers: {
-		// 			Authorization: `Bearer ${TokenService.getAuthToken()}`,
-		// 			Accept: "application/json",
-		// 		},
-		// 	};
-		// 	fetch(`${Config.API_ENDPOINT}/users`, options)
-		// 		.then((res) => {
-		// 			if (!res.ok) {
-		// 				return Promise.reject(res.statusText);
-		// 			}
-		// 			return res.json();
-		// 		})
-		// 		.then((user) => this.setState({ user }));
-		// },
+		getData: () => {
+			const options = {
+				method: "GET",
+				headers: {
+					Authorization: `Bearer ${Config.TOKEN_KEY}`,
+					Accept: "application/json",
+				},
+			};
+			fetch(`${Config.API_ENDPOINT}/users`, options)
+				.then((res) => {
+					if (!res.ok) {
+						return Promise.reject(res.statusText);
+					}
+					return res.json();
+				})
+				.then((user) => this.setState({ user }));
+		},
 	};
 
 	static getDerivedStateFromError(error) {
@@ -42,15 +42,16 @@ export default class App extends Component {
 		return { hasError: true };
 	}
 
-	// componentDidMount() {
-	// 	if (TokenService.hasAuthToken()) {
-	// 		this.state.getData();
-	// 	}
-	// }
+	componentDidMount() {
+		if (TokenService.hasAuthToken()) {
+			this.state.getData();
+		}
+	}
 
 	render() {
 		const { hasError } = this.state;
 		return (
+			<Context.Provider value={this.state}>
 			<div className="App" id="App">
 				<Header />
 				<main>
@@ -62,7 +63,7 @@ export default class App extends Component {
 					)}
 					<Switch>
 						<PrivateRoute exact path={"/"} component={Dashboard} />
-						<PublicOnlyRoute path={"/landing"} component={LandingRoute} />
+						<Route path={"/landing"} component={LandingRoute} {...this.props}/>
 						<Route path={"/services"} component={ServicesRoute} />
 						<Route path={"/gallery"} component={GalleryRoute} />
 						<Route path={"/contact"} component={ContactRoute} />
@@ -70,6 +71,7 @@ export default class App extends Component {
 					</Switch>
 				</main>
 			</div>
+			</Context.Provider>
 		);
 	}
 }

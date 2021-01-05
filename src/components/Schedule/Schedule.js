@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import UserContext from "../../contexts/UserContext";
+import Context from "../../Context";
 import "./Schedule.css";
 
 export default class Schedule extends Component {
-  static contextType = UserContext;
+  static contextType = Context;
 
   render() {
     return (

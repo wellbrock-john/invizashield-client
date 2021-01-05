@@ -1,4 +1,3 @@
-import jwtDecode from "jwt-decode";
 import config from "../config";
 
 let _timeoutId;
@@ -16,14 +15,6 @@ const TokenService = {
 	},
 	hasAuthToken() {
 		return !!TokenService.getAuthToken();
-	},
-	parseJwt(jwt) {
-		return jwtDecode(jwt);
-	},
-	parseAuthToken() {
-		const authToken = TokenService.getAuthToken();
-		if (authToken) return TokenService.parseJwt(authToken);
-		else return undefined;
 	},
 	_getMsUntilExpiry(payload) {
 		return payload.exp * 1000 - Date.now();
