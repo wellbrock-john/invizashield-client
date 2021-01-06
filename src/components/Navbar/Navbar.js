@@ -3,6 +3,8 @@ import { MenuItems } from "../Menu/MenuItems";
 import logo from "../../components/Logo/InvizaShield-Logo.jpg";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import TokenService from "../../services/token-service";
+import Logout from "../Logout/Logout";
 
 export default class Navbar extends Component {
 	state = { clicked: false };
@@ -34,6 +36,7 @@ export default class Navbar extends Component {
 						);
 					})}
 				</ul>
+				{TokenService.hasAuthToken() && <Logout />}
 			</nav>
 		);
 	}
