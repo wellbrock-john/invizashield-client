@@ -26,9 +26,6 @@ class LoginSignup extends Component {
 			password,
 			confirmPassword,
 		} = e.target;
-		this.context.user = {
-			email: e.target.email.value,
-		};
 		const { history } = this.props;
 		this.setState({ error: null });
 		if (this.state.form === "register") {
@@ -52,33 +49,32 @@ class LoginSignup extends Component {
 				await AuthAPIService.postLogin(user)
 					.then((response) => {
 						TokenService.saveAuthToken(response.authToken);
-					})
-					.then(this.context.getData(user));
+					});
 
 				first_name.value = "";
 				last_name.value = "";
 				email.value = "";
 				password.value = "";
 
-				history.push("/");
+				history.push("/dashboard");
+				this.context.refreshPage();
 			} catch ({ error }) {
 				return this.setState({ error });
 			}
 		} else {
 			const user = { email: email.value, password: password.value };
-			console.log({ user });
 			AuthAPIService.postLogin(user)
 				.then((response) => {
 					TokenService.saveAuthToken(response.authToken);
-					history.push("/");
+					history.push("/dashboard");
+					this.context.refreshPage();
 				})
-				.then(this.context.getData(user))
 				.catch((res) => {
 					email.value = "";
 					password.value = "";
 					this.setState({ error: res.error });
 				});
-		}
+		};
 	};
 
 	render() {

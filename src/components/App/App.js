@@ -18,11 +18,15 @@ export default class App extends Component {
 		hasError: false,
 		user: {},
 
-		getData: (user) => {
+		refreshPage: () => {
+			window.location.reload();
+		},
+
+		getData: () => {
 			const options = {
 				method: "GET",
 				headers: {
-					Authorization: `Bearer ${TokenService.getAuthToken(user)}`,
+					Authorization: `Bearer ${TokenService.getAuthToken()}`,
 					Accept: "application/json",
 				},
 			};
@@ -62,11 +66,10 @@ export default class App extends Component {
 							</p>
 						)}
 						<Switch>
-							<PrivateRoute exact path={"/"} component={Dashboard} />
+							<PrivateRoute path={"/dashboard"} component={Dashboard} />
 							<Route
-								path={"/landing"}
+								exact path={"/"}
 								component={LandingRoute}
-								{...this.props}
 							/>
 							<Route path={"/services"} component={ServicesRoute} />
 							<Route path={"/gallery"} component={GalleryRoute} />

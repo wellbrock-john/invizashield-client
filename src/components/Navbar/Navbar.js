@@ -14,7 +14,7 @@ export default class Navbar extends Component {
 	render() {
 		return (
 			<nav className="NavbarItems">
-				<Link id="navbar-logo" className="navbar-logo" to="/landing">
+				<Link id="navbar-logo" className="navbar-logo" to="/">
 					<img src={logo} alt="Logo" />
 				</Link>
 				<div className="menu-icon" onClick={this.handleClick}>

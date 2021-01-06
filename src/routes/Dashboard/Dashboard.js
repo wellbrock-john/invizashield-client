@@ -10,6 +10,7 @@ export default class Dashboard extends Component {
     accountClicked: true,
     scheduleClicked: false,
     contactClicked: false,
+    error: null,
   }
 
   static contextType = Context;
