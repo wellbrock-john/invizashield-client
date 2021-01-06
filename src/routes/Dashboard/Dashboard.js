@@ -11,7 +11,7 @@ export default class Dashboard extends Component {
     scheduleClicked: false,
     contactClicked: false,
     error: null,
-  }
+  };
 
   static contextType = Context;
 
@@ -22,7 +22,7 @@ export default class Dashboard extends Component {
       scheduleClicked: false,
       contactClicked: false,
     });
-  }
+  };
 
   handleScheduleClicked = (e) => {
     e.preventDefault();
@@ -30,8 +30,8 @@ export default class Dashboard extends Component {
       accountClicked: false,
       scheduleClicked: true,
       contactClicked: false,
-    })
-  }
+    });
+  };
 
   handleContactClicked = (e) => {
     e.preventDefault();
@@ -39,27 +39,57 @@ export default class Dashboard extends Component {
       accountClicked: false,
       scheduleClicked: false,
       contactClicked: true,
-    })
-  }
+    });
+  };
 
   render() {
     return (
       <section className="dashboard-container">
         <div className="sidebar">
           <ul className="dashboard-ul">
-            <li><button className="li-btn" id="account-btn" name="account-btn" type="button" onClick={this.handleAccountClicked}>Account</button></li>
-            <li><button className="li-btn" id="schedule-btn" name="schedule-btn" type="button" onClick={this.handleScheduleClicked}>Schedule</button></li>
-            <li><button className="li-btn" id="contact-btn" name="contact-btn" type="button" onClick={this.handleContactClicked}>Contact</button></li>
+            <li>
+              <button
+                className="li-btn"
+                id="account-btn"
+                name="account-btn"
+                type="button"
+                onClick={this.handleAccountClicked}
+              >
+                Account
+              </button>
+            </li>
+            <li>
+              <button
+                className="li-btn"
+                id="schedule-btn"
+                name="schedule-btn"
+                type="button"
+                onClick={this.handleScheduleClicked}
+              >
+                Schedule
+              </button>
+            </li>
+            <li>
+              <button
+                className="li-btn"
+                id="contact-btn"
+                name="contact-btn"
+                type="button"
+                onClick={this.handleContactClicked}
+              >
+                Contact
+              </button>
+            </li>
           </ul>
         </div>
         <div className="dashboard-main">
-          {
-            this.state.scheduleClicked
-            ? <Schedule />
-            : this.state.contactClicked
-            ? <Contact />
-            : <Account />
-            }
+          {this.state.scheduleClicked ? (
+            <Schedule />
+          ) : this.state.contactClicked ? (
+            <Contact />
+          ) : (
+            <Account />
+          )}
         </div>
       </section>
     );

@@ -11,7 +11,7 @@ export default class Schedule extends Component {
         <div className="greeting-div">
           <h2 className="greeting">Schedule Your Next Appointment</h2>
         </div>
-        <div className="dashboard-content">Schedule</div>{" "}
+        <div className="dashboard-content">Schedule</div>
       </div>
     );
   }
