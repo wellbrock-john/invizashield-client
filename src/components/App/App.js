@@ -52,23 +52,23 @@ export default class App extends Component {
         .then((vehicles) => this.setState({ vehicles }));
     },
 
-    getVehicleById: (id) => {
-        const options = {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${TokenService.getAuthToken()}`,
-            Accept: "application/json",
-          },
-        };
-        fetch(`${Config.API_ENDPOINT}/vehicles/${id}`, options)
-        .then((res) => {
-          if (!res.ok) {
-            return Promise.reject(res.statusText);
-          }
-          return res.json();
-        })
-        .then((vehicle) => this.setState({ vehicle }));
-    },
+    // getVehicleById: (id) => {
+    //     const options = {
+    //       method: "GET",
+    //       headers: {
+    //         Authorization: `Bearer ${TokenService.getAuthToken()}`,
+    //         Accept: "application/json",
+    //       },
+    //     };
+    //     fetch(`${Config.API_ENDPOINT}/vehicles/${id}`, options)
+    //     .then((res) => {
+    //       if (!res.ok) {
+    //         return Promise.reject(res.statusText);
+    //       }
+    //       return res.json();
+    //     })
+    //     .then((vehicle) => this.setState({ vehicle }));
+    // },
 
     logout: () => {
       this.setState({

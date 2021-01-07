@@ -6,8 +6,12 @@ import "./DisplayVehicles.css";
 class DisplayVehicles extends Component {
   static contextType = Context;
 
-  handleClick = (id) => {
-    this.context.getVehicleById(id);
+  handleClick = (vehicle) => {
+    this.context.vehicle = vehicle;
+    const objToStr = this.context.vehicle;
+    const vehicleJSON = JSON.stringify(objToStr);
+    window.localStorage.setItem("vehicle", vehicleJSON);
+    this.props.history.push(`/vehicle-management/${vehicle.id}`);
   };
 
   render() {
@@ -26,7 +30,7 @@ class DisplayVehicles extends Component {
                 </p>
                 <button
                   className="data-secondary"
-                  onClick={() => this.handleClick(vehicle.id)}
+                  onClick={() => this.handleClick(vehicle)}
                 >
                   Edit
                 </button>
@@ -39,4 +43,4 @@ class DisplayVehicles extends Component {
   }
 }
 
-export default withRouter(DisplayVehicles)
+export default withRouter(DisplayVehicles);

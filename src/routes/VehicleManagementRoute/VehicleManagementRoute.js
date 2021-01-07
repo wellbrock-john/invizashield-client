@@ -6,14 +6,16 @@ import "./VehicleManagementRoute.css";
 
 export default class VehicleManagementRoute extends Component {
   static contextType = Context;
+  
+  state = {
+    vehicle: JSON.parse(window.localStorage.getItem("vehicle")),
+  }
 
   render() {
-    const { vehicle } = this.context;
-    console.log(vehicle.id)
-    console.log(this.props.match.params.id)
+    const { vehicle } = this.state;
     return (
       <div className="VehicleManagementRoute">
-        { vehicle.id === this.props.match.params.id ? 
+        { vehicle.id.toString() === this.props.match.params.id ? 
           ( 
              <EditVehicleForm {...vehicle} /> 
           ) : (

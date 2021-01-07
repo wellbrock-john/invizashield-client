@@ -24,6 +24,20 @@ const AuthApiService = {
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );
   },
+  postVehicles(vehicle) {
+    return fetch(`${config.API_ENDPOINT}/vehicles`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${TokenService.getAuthToken()}`,
+          Accept: "application/json",
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(vehicle),
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    );
+  },
+  
   refreshToken() {
     return fetch(`${config.API_ENDPOINT}/auth/login`, {
       method: "PUT",
