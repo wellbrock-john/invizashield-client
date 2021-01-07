@@ -9,6 +9,7 @@ import LandingRoute from "../../routes/LandingRoute/LandingRoute";
 import NotFoundRoute from "../../routes/NotFoundRoute/NotFoundRoute";
 import PrivateRoute from "../../routes/PrivateRoute/PrivateRoute";
 import ServicesRoute from "../../routes/ServicesRoute/ServicesRoute";
+import VehicleManagementRoute from "../../routes/VehicleManagementRoute/VehicleManagementRoute";
 import TokenService from "../../services/token-service";
 import Header from "../Header/Header";
 import "./App.css";
@@ -17,6 +18,8 @@ export default class App extends Component {
   state = {
     hasError: false,
     user: {},
+    vehicles: [],
+    vehicle: {},
 
     refreshPage: () => {
       window.location.reload();
@@ -38,12 +41,40 @@ export default class App extends Component {
           return res.json();
         })
         .then((user) => this.setState({ user }));
-	},
-	logout: () => {
-		this.setState({
-			user: {},
-		})
-	}
+
+      fetch(`${Config.API_ENDPOINT}/vehicles`, options)
+        .then((res) => {
+          if (!res.ok) {
+            return Promise.reject(res.statusText);
+          }
+          return res.json();
+        })
+        .then((vehicles) => this.setState({ vehicles }));
+    },
+
+    getVehicleById: (id) => {
+        const options = {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${TokenService.getAuthToken()}`,
+            Accept: "application/json",
+          },
+        };
+        fetch(`${Config.API_ENDPOINT}/vehicles/${id}`, options)
+        .then((res) => {
+          if (!res.ok) {
+            return Promise.reject(res.statusText);
+          }
+          return res.json();
+        })
+        .then((vehicle) => this.setState({ vehicle }));
+    },
+
+    logout: () => {
+      this.setState({
+        user: {},
+      });
+    },
   };
 
   static getDerivedStateFromError(error) {
@@ -71,12 +102,17 @@ export default class App extends Component {
               </p>
             )}
             <Switch>
+              
               <PrivateRoute path={"/dashboard"} component={Dashboard} />
+              <PrivateRoute path={"/vehicle-management/:id"} component={VehicleManagementRoute} />
+
               <Route exact path={"/"} component={LandingRoute} />
               <Route path={"/services"} component={ServicesRoute} />
               <Route path={"/gallery"} component={GalleryRoute} />
               <Route path={"/contact"} component={ContactRoute} />
+              
               <Route component={NotFoundRoute} />
+
             </Switch>
           </main>
         </div>
