@@ -24,7 +24,7 @@ const AuthApiService = {
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );
   },
-  postVehicles(vehicle) {
+  postVehicle(vehicle) {
     return fetch(`${config.API_ENDPOINT}/vehicles`, {
       method: "POST",
       headers: {

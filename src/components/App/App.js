@@ -11,8 +11,10 @@ import PrivateRoute from "../../routes/PrivateRoute/PrivateRoute";
 import ServicesRoute from "../../routes/ServicesRoute/ServicesRoute";
 import VehicleManagementRoute from "../../routes/VehicleManagementRoute/VehicleManagementRoute";
 import TokenService from "../../services/token-service";
+import AuthApiService from "../../services/auth-api-service";
 import Header from "../Header/Header";
 import "./App.css";
+import AddVehicleForm from "../Forms/AddVehicleForm";
 
 export default class App extends Component {
   state = {
@@ -50,6 +52,36 @@ export default class App extends Component {
           return res.json();
         })
         .then((vehicles) => this.setState({ vehicles }));
+    },
+
+    handleSubmitVehicle: (e) => {
+      e.preventDefault();
+      const {
+        year,
+        make,
+        model,
+        submodel,
+        color,
+        paintCondition,
+        coverage,
+      } = e.target;
+      const vehicle = {
+        year: year.value,
+        make: make.value,
+        model: model.value,
+        submodel: submodel.value,
+        color: color.value,
+        paintCondition: paintCondition.value,
+        coverage: coverage.value,
+      };
+      AuthApiService.postVehicle(vehicle)
+      .then((res) => {
+        if (res.status === 204) {
+          return this.setState({confirmation: true})
+        } else {
+          return this.setState({showError: true})
+        }
+      })
     },
 
     // getVehicleById: (id) => {
@@ -104,6 +136,7 @@ export default class App extends Component {
             <Switch>
               
               <PrivateRoute path={"/dashboard"} component={Dashboard} />
+              <PrivateRoute exact path={"/vehicle-management"} component={AddVehicleForm} />
               <PrivateRoute path={"/vehicle-management/:id"} component={VehicleManagementRoute} />
 
               <Route exact path={"/"} component={LandingRoute} />

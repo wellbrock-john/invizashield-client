@@ -6,6 +6,8 @@ import Context from "../../Context";
 import "./Dashboard.css";
 
 export default class Dashboard extends Component {
+  static contextType = Context;
+
   state = {
     accountClicked: true,
     scheduleClicked: false,
@@ -43,8 +45,11 @@ export default class Dashboard extends Component {
   };
 
   render() {
+    const  user  = this.context.user || {};
+
     return (
-      <section className="dashboard-container">
+      <>
+      { user && user.id ? (<section className="dashboard-container">
         <div className="sidebar">
           <ul className="dashboard-ul">
             <li>
@@ -91,7 +96,10 @@ export default class Dashboard extends Component {
             <Account />
           )}
         </div>
-      </section>
+      </section>) : (
+        <h2>Loading Your Account</h2>
+      )}
+      </>
     );
   }
 }

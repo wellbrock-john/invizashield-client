@@ -1,18 +1,10 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import Context from "../../Context";
 import "./DisplayVehicles.css";
 
 class DisplayVehicles extends Component {
   static contextType = Context;
-
-  handleClick = (vehicle) => {
-    this.context.vehicle = vehicle;
-    const objToStr = this.context.vehicle;
-    const vehicleJSON = JSON.stringify(objToStr);
-    window.localStorage.setItem("vehicle", vehicleJSON);
-    this.props.history.push(`/vehicle-management/${vehicle.id}`);
-  };
 
   render() {
     const { vehicles } = this.context;
@@ -28,16 +20,19 @@ class DisplayVehicles extends Component {
                   {vehicle.make}
                   {vehicle.model}
                 </p>
-                <button
+                <Link
                   className="data-secondary"
-                  onClick={() => this.handleClick(vehicle)}
+                  to={`/vehicle-management/${vehicle.id}`}
                 >
                   Edit
-                </button>
+                </Link>
               </li>
             );
           })}
         </ul>
+        <a className="add-vehicle-link" href="/vehicle-management/">
+          Add A New Vehicle And Get A Free Quote!
+        </a>
       </div>
     );
   }
