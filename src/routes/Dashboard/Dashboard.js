@@ -3,6 +3,7 @@ import Account from "../../components/Account/Account";
 import Contact from "../../components/Contact/Contact";
 import Schedule from "../../components/Schedule/Schedule";
 import Context from "../../Context";
+import TokenService from "../../services/token-service";
 import "./Dashboard.css";
 
 export default class Dashboard extends Component {
@@ -16,6 +17,12 @@ export default class Dashboard extends Component {
   };
 
   static contextType = Context;
+
+  componentDidMount() {
+    if (TokenService.hasAuthToken()) {
+      this.context.getData();
+    }
+  }
 
   handleAccountClicked = (e) => {
     e.preventDefault();

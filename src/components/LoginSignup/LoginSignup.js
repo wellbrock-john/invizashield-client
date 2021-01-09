@@ -51,10 +51,10 @@ class LoginSignup extends Component {
         await AuthAPIService.postUser(userR);
         await AuthAPIService.postLogin(user).then((response) => {
           TokenService.saveAuthToken(response.authToken);
+        })
+        .then(() => {
+          history.push("/dashboard")
         });
-
-        history.push("/dashboard");
-        this.context.refreshPage();
       } catch ({ error }) {
         first_name.value = "";
         last_name.value = "";
@@ -67,9 +67,10 @@ class LoginSignup extends Component {
       const user = { email: email.value, password: password.value };
       AuthAPIService.postLogin(user)
         .then((response) => {
-          TokenService.saveAuthToken(response.authToken);
-          history.push("/dashboard");
-          this.context.refreshPage();
+          TokenService.saveAuthToken(response.authToken);          
+        })
+        .then(() => {
+          history.push("/dashboard")
         })
         .catch((res) => {
           email.value = "";

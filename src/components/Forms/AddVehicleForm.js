@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import Context from "../../Context";
+import "./Form.css";
 
 export default class AddVehicleForm extends Component {
   static contextType = Context;
 
 render() {
   return (
-    <form className="vm-form" id="vm-form" name="vm-form" aria-label="vm-form" onSubmit={e => this.context.handleSubmitVehicle(e)}>
+    <form className="vm-form" id="vm-form" name="vm-form" aria-label="Add vehicle form" onSubmit={e => this.context.handleSubmitVehicle(e)}>
       <label htmlFor="veh-year">Year</label>
       <input
         className="vm-form-input"
         id="veh-year"
         name="year"
         aria-label="Vehicle Year"
-        value="2020"
         type="text"
         required
       />
@@ -23,7 +23,6 @@ render() {
         id="veh-make"
         name="make"
         aria-label="Vehicle Make"
-        value="Found On Road Dead"
         type="text"
         required
       />
@@ -32,9 +31,8 @@ render() {
         className="vm-form-input"
         id="veh-model"
         name="model"
-        aria-label="vm-form-input"
+        aria-label="Vehicle Model"
         type="text"
-        value="Fusion"
         required
       />
       <label htmlFor="veh-submodel">Submodel</label>
@@ -43,17 +41,15 @@ render() {
         id="veh-submodel"
         name="submodel"
         type="text"
-        value="Titanium Hybrid"
-        aria-label="vm-form-input"
+        aria-label="Vehicle Submodel"
       />
       <label htmlFor="veh-color">Color</label>
       <input
         className="vm-form-input"
         id="veh-color"
         name="color"
-        value="Pink"
         type="text"
-        aria-label="vm-form-input"
+        aria-label="Vehicle Color"
         required
       />
       <label htmlFor="veh-paint-condition">Paint Condition</label>
@@ -65,8 +61,7 @@ render() {
         min="1"
         max="10"
         step="1"
-        value="1"
-        aria-label="vm-form-input"
+        aria-label="Vehicle Paint Condition On A Scale Of One To Ten"
         required
       />
       <label htmlFor="veh-coverage">Coverage</label>
@@ -75,7 +70,7 @@ render() {
         id="veh-coverage"
         name="coverage"
         type="text"
-        aria-label="vm-form-input"
+        aria-label="Vehicle Coverage"
         defaultValue="Danger Zone. No Coverage Yet."
       />
       <input type="submit" name="submit" value="Get Quote" aria-label="Get Quote Button" />

@@ -19,6 +19,7 @@ import AddVehicleForm from "../Forms/AddVehicleForm";
 export default class App extends Component {
   state = {
     hasError: false,
+    confirmation: false,
     user: {},
     vehicles: [],
     vehicle: {},
@@ -54,7 +55,7 @@ export default class App extends Component {
         .then((vehicles) => this.setState({ vehicles }));
     },
 
-    handleSubmitVehicle: (e) => {
+    handleSubmitVehicle: (e, id) => {
       e.preventDefault();
       const {
         year,
@@ -74,33 +75,30 @@ export default class App extends Component {
         paintCondition: paintCondition.value,
         coverage: coverage.value,
       };
-      AuthApiService.postVehicle(vehicle)
+      if (e.target.id === "vm-edit-form") {
+        AuthApiService.putVehicle(vehicle, id)
       .then((res) => {
-        if (res.status === 204) {
+        if (res.status === 201) {
           return this.setState({confirmation: true})
         } else {
           return this.setState({showError: true})
+        }})
+      } else {
+      AuthApiService.postVehicle(vehicle)
+      .then((res) => {
+        if (res.status === 201) {
+          return this.setState({confirmation: true})
+        } else {
+          return this.setState({hasError: true})
         }
-      })
+      })}
     },
 
-    // getVehicleById: (id) => {
-    //     const options = {
-    //       method: "GET",
-    //       headers: {
-    //         Authorization: `Bearer ${TokenService.getAuthToken()}`,
-    //         Accept: "application/json",
-    //       },
-    //     };
-    //     fetch(`${Config.API_ENDPOINT}/vehicles/${id}`, options)
-    //     .then((res) => {
-    //       if (!res.ok) {
-    //         return Promise.reject(res.statusText);
-    //       }
-    //       return res.json();
-    //     })
-    //     .then((vehicle) => this.setState({ vehicle }));
-    // },
+    setVehiclesAfterDelete: (id) => {
+			return this.setState({
+				vehicles: this.state.vehicles.filter((vehicle) => vehicle.id !== id),
+			});
+		},
 
     logout: () => {
       this.setState({
@@ -116,7 +114,7 @@ export default class App extends Component {
 
   componentDidMount() {
     if (TokenService.hasAuthToken()) {
-      this.state.getData();
+      this.state.getData()
     }
   }
 

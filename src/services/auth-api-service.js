@@ -29,7 +29,7 @@ const AuthApiService = {
       method: "POST",
       headers: {
         Authorization: `Bearer ${TokenService.getAuthToken()}`,
-          Accept: "application/json",
+        Accept: "application/json",
         "content-type": "application/json",
       },
       body: JSON.stringify(vehicle),
@@ -37,7 +37,37 @@ const AuthApiService = {
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );
   },
-  
+
+  deleteVehicle(id) {
+    return fetch(`${config.API_ENDPOINT}/vehicles/${id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${TokenService.getAuthToken()}`,
+      },
+    })
+      .then((res) => {
+        if (!res.ok) return res.json().then((error) => Promise.reject(error));
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  },
+
+  putVehicle(vehicle, id) {
+    return fetch(`${config.API_ENDPOINT}/vehicles/${id}`, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${TokenService.getAuthToken()}`,
+        Accept: "application/json",
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(vehicle)
+    })
+    .then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    );
+  },
+
   refreshToken() {
     return fetch(`${config.API_ENDPOINT}/auth/login`, {
       method: "PUT",
