@@ -55,6 +55,19 @@ export default class App extends Component {
         .then((vehicles) => this.setState({ vehicles }));
     },
 
+    handleSubmitUser: (e) => {
+      e.preventDefault();
+      const { id } = this.state.user;
+      const { first_name, last_name, phone_num, email,} = e.target;
+      const user = { 
+        first_name: first_name.value,
+        last_name: last_name.value,
+        phone_num: phone_num.value,
+        email: email.value,
+      };
+      AuthApiService.putUser(user, id)
+    },
+
     handleSubmitVehicle: (e, id) => {
       e.preventDefault();
       const {
@@ -77,28 +90,16 @@ export default class App extends Component {
       };
       if (e.target.id === "vm-edit-form") {
         AuthApiService.putVehicle(vehicle, id)
-      .then((res) => {
-        if (res.status === 201) {
-          return this.setState({confirmation: true})
-        } else {
-          return this.setState({showError: true})
-        }})
       } else {
-      AuthApiService.postVehicle(vehicle)
-      .then((res) => {
-        if (res.status === 201) {
-          return this.setState({confirmation: true})
-        } else {
-          return this.setState({hasError: true})
-        }
-      })}
+        AuthApiService.postVehicle(vehicle)
+      }
     },
 
     setVehiclesAfterDelete: (id) => {
-			return this.setState({
-				vehicles: this.state.vehicles.filter((vehicle) => vehicle.id !== id),
-			});
-		},
+      return this.setState({
+        vehicles: this.state.vehicles.filter((vehicle) => vehicle.id !== id),
+      });
+    },
 
     logout: () => {
       this.setState({
@@ -114,7 +115,7 @@ export default class App extends Component {
 
   componentDidMount() {
     if (TokenService.hasAuthToken()) {
-      this.state.getData()
+      this.state.getData();
     }
   }
 
@@ -132,18 +133,23 @@ export default class App extends Component {
               </p>
             )}
             <Switch>
-              
               <PrivateRoute path={"/dashboard"} component={Dashboard} />
-              <PrivateRoute exact path={"/vehicle-management"} component={AddVehicleForm} />
-              <PrivateRoute path={"/vehicle-management/:id"} component={VehicleManagementRoute} />
+              <PrivateRoute
+                exact
+                path={"/vehicle-management"}
+                component={AddVehicleForm}
+              />
+              <PrivateRoute
+                path={"/vehicle-management/:id"}
+                component={VehicleManagementRoute}
+              />
 
               <Route exact path={"/"} component={LandingRoute} />
               <Route path={"/services"} component={ServicesRoute} />
               <Route path={"/gallery"} component={GalleryRoute} />
               <Route path={"/contact"} component={ContactRoute} />
-              
-              <Route component={NotFoundRoute} />
 
+              <Route component={NotFoundRoute} />
             </Switch>
           </main>
         </div>

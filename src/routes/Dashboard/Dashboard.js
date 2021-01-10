@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Account from "../../components/Account/Account";
-import Contact from "../../components/Contact/Contact";
+import Profile from "../../components/Profile/Profile";
 import Schedule from "../../components/Schedule/Schedule";
 import Context from "../../Context";
 import TokenService from "../../services/token-service";
@@ -12,7 +12,7 @@ export default class Dashboard extends Component {
   state = {
     accountClicked: true,
     scheduleClicked: false,
-    contactClicked: false,
+    profileClicked: false,
     error: null,
   };
 
@@ -29,7 +29,7 @@ export default class Dashboard extends Component {
     this.setState({
       accountClicked: true,
       scheduleClicked: false,
-      contactClicked: false,
+      profileClicked: false,
     });
   };
 
@@ -38,16 +38,16 @@ export default class Dashboard extends Component {
     this.setState({
       accountClicked: false,
       scheduleClicked: true,
-      contactClicked: false,
+      profileClicked: false,
     });
   };
 
-  handleContactClicked = (e) => {
+  handleProfileClicked = (e) => {
     e.preventDefault();
     this.setState({
       accountClicked: false,
       scheduleClicked: false,
-      contactClicked: true,
+      profileClicked: true,
     });
   };
 
@@ -84,12 +84,12 @@ export default class Dashboard extends Component {
             <li>
               <button
                 className="li-btn"
-                id="contact-btn"
-                name="contact-btn"
+                id="profile-btn"
+                name="profile-btn"
                 type="button"
-                onClick={this.handleContactClicked}
+                onClick={this.handleProfileClicked}
               >
-                Contact
+                Profile
               </button>
             </li>
           </ul>
@@ -97,8 +97,8 @@ export default class Dashboard extends Component {
         <div className="dashboard-main">
           {this.state.scheduleClicked ? (
             <Schedule />
-          ) : this.state.contactClicked ? (
-            <Contact />
+          ) : this.state.profileClicked ? (
+            <Profile />
           ) : (
             <Account />
           )}

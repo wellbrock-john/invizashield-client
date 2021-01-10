@@ -23,6 +23,7 @@ class LoginSignup extends Component {
       first_name,
       last_name,
       email,
+      phone_num,
       password,
       confirmPassword,
     } = e.target;
@@ -33,6 +34,7 @@ class LoginSignup extends Component {
         first_name.value = "";
         last_name.value = "";
         email.value = "";
+        phone_num.value = "";
         password.value = "";
         confirmPassword.value = "";
         return this.setState({
@@ -44,6 +46,7 @@ class LoginSignup extends Component {
         first_name: first_name.value,
         last_name: last_name.value,
         email: email.value,
+        phone_num: phone_num.value,
         password: password.value,
       };
       const user = { email: email.value, password: password.value };
@@ -59,6 +62,7 @@ class LoginSignup extends Component {
         first_name.value = "";
         last_name.value = "";
         email.value = "";
+        phone_num.value = "";
         password.value = "";
         confirmPassword.value = "";
         return this.setState({ error });
@@ -100,7 +104,7 @@ class LoginSignup extends Component {
                 type="text"
                 name="first_name"
                 id="first_name"
-                aria-label="first_name"
+                aria-label="First Name"
                 required
               />
             )}
@@ -112,7 +116,19 @@ class LoginSignup extends Component {
                 type="text"
                 name="last_name"
                 id="last_name"
-                aria-label="last_name"
+                aria-label="Last Name"
+                required
+              />
+            )}
+            {this.state.form === "login" ? (
+              ""
+            ) : (
+              <input
+                placeholder="Phone"
+                type="tel"
+                name="phone_num"
+                id="phone_num"
+                aria-label="Phone Number"
                 required
               />
             )}
@@ -121,7 +137,7 @@ class LoginSignup extends Component {
               type="email"
               name="email"
               id="email"
-              aria-label="email"
+              aria-label="Email"
               required
             />
             <input
@@ -129,18 +145,18 @@ class LoginSignup extends Component {
               type="password"
               name="password"
               id="password"
-              aria-label="password"
+              aria-label="Password"
               required
             />
             {this.state.form === "login" ? (
               ""
             ) : (
               <input
-                placeholder="Re-type password"
+                placeholder="Confirm Password"
                 type="password"
                 name="confirmPassword"
                 id="confirmPassword"
-                aria-label="confirmPassword"
+                aria-label="Confirm Password"
                 required
               />
             )}
