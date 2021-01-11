@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../components/Logo/InvizaShield-Logo.jpg";
+import logo from "../../components/images/Logo/InvizaShieldLogoOpaque.png";
 import TokenService from "../../services/token-service";
 import Logout from "../Logout/Logout";
 import { MenuItems } from "../Menu/MenuItems";

@@ -1,6 +1,12 @@
-.App {
-	min-height: 100vh;
-	text-align: center;
-	background-image: url(../images/AdobeStock_274008098.jpeg);
-	background-size: cover;
+main {
+	overflow: scroll;
+}
+
+@media all and (min-width: 500px) {
+  .App {
+    min-height: 100vh;
+    text-align: center;
+    background-image: url(../images/AdobeStock_274008098.jpeg);
+    background-size: cover;
+  }
 }

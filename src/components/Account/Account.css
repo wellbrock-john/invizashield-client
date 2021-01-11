@@ -1,8 +1,10 @@
-.greeting-div {
+@media all and (min-width: 500px) {
+  .greeting-div {
     height: 10%;
-}
+  }
 
-.dashboard-content {
+  .dashboard-content {
     width: 100%;
     height: 100%;
+  }
 }

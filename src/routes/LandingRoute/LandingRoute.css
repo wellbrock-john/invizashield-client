@@ -1,25 +1,54 @@
 .LandingRoute {
     display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.slogan {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.slogan-span {
+    align-self: flex-end;
+}
+
+.container {
+    width: initial;
+}
+
+@media all and (max-width: 600px) {
+    .slogan-span {
+        display: none;
+    }
+}
+
+@media all and (min-width: 500px) {
+  .LandingRoute {
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-}
+  }
 
-.paragraph-plus-form-div {
+  .paragraph-plus-form-div {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     height: 100%;
     width: 100%;
     margin-bottom: 4rem;
-}
+  }
 
-.slogan {
+  .slogan {
     font-size: 2.5rem;
     text-align: center;
     width: 500px;
-}
+  }
 
-.reviews-div {
+  .reviews-div {
     margin: 10rem 10rem 0 10rem;
+  }
 }
