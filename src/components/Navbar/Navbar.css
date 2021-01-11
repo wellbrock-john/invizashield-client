@@ -1,9 +1,13 @@
+.nav {
+  margin-bottom: 20px;
+}
+
 .NavbarItems {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: 7rem;
+    height: 8rem;
 }
 
 .navbar-logo {
@@ -83,7 +87,7 @@ width: 16rem;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 500px;
+    height: 300px;
     position: absolute;
     top: 80px;
     left: -100%;
@@ -92,19 +96,25 @@ width: 16rem;
   }
 
   .nav-menu.active {
-    background: rgb(93, 12, 12);
+    background: black;
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 1;
+    list-style: none;
+    width: 65%;
+    padding: 0;
   }
 
   .nav-links {
-    text-align: center;
-    padding: 2rem;
+    text-align: left;
+    padding-left: 1rem;
+    line-height: 3.5rem;
+    font-size: 1.6rem;
     width: 100%;
     display: table;
     color: white;
+    text-decoration: none;
   }
 
   .nav-links:hover {
@@ -115,29 +125,16 @@ width: 16rem;
   .menu-icon {
     display: block;
     position: absolute;
-    bottom: 0;
-    right: -28%;
+    bottom: 1.7rem;
+    right: -20vw;
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
   }
+}
 
-  .nav-links-mobile {
-    display: block;
-    text-align: center;
-    padding: 1.5rem;
-    margin: 2rem auto;
-    border-radius: 4px;
-    width: 0%;
-    background: white;
-    text-decoration: none;
-    color: black;
-    font-size: 1.5rem;
-  }
-
-  .nav-links-mobile:hover {
-    background: white;
-    color: black;
-    transition: 250ms;
+@media all and (max-width: 374px) {
+  .menu-icon {
+    right: -30vw;
   }
 }

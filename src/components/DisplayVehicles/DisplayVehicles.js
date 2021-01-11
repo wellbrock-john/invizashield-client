@@ -22,15 +22,15 @@ class DisplayVehicles extends Component {
             return (
               <li key={index} className="vehicle-data">
                 <p className="data--primary">
-                  {vehicle.year}
-                  {vehicle.make}
-                  {vehicle.model}
+                  {vehicle.year}{" "}
+                  {vehicle.make}{" "}
+                  {vehicle.model}{" "}
                 </p>
                 <Link
                   className="data-secondary"
                   to={`/vehicle-management/${vehicle.id}`}
                 >
-                  Edit
+                  <strong>--</strong> Edit
                 </Link>
                 <button className="delete-vehicle" type="submit" onClick={() => this.handleDelete(vehicle.id)}>
                   Delete
@@ -39,8 +39,8 @@ class DisplayVehicles extends Component {
             );
           })}
         </ul>
-        <a className="add-vehicle-link" href="/vehicle-management/">
-          Add A New Vehicle And Get A Free Quote!
+         <a className="add-vehicle-link" href="/vehicle-management/">
+         <i className="fas fa-shield-alt" /> Add A New Vehicle And Get A Free Quote Here! <i className="fas fa-shield-alt" />
         </a>
       </div>
     );
