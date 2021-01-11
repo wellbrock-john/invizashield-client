@@ -1,16 +1,17 @@
-.dashboard-container {
+@media all and (min-width: 500px) {
+  .dashboard-container {
     display: flex;
     flex-direction: row;
     justify-content: left;
     margin: 5% 20%;
     min-height: 500px;
-}
+  }
 
-.sidebar {
+  .sidebar {
     width: 15%;
-}
+  }
 
-.dashboard-ul {
+  .dashboard-ul {
     height: 500px;
     list-style: none;
     border: solid gold 8px;
@@ -18,20 +19,21 @@
     border-radius: 10px 0 0 10px;
     padding: 5px 0 0 0;
     margin: 0;
-}
+  }
 
-.li-btn {
+  .li-btn {
     background-color: gold;
     line-height: 3rem;
     border-radius: 5px 0 0 5px;
-    margin-left: .7rem;
-}
+    margin-left: 0.7rem;
+  }
 
-.dashboard-main {
+  .dashboard-main {
     display: flex;
     flex-direction: column;
     width: 100%;
     border: solid gold 8px;
     border-radius: 0 10px 10px 0;
     background-color: lightslategray;
+  }
 }

@@ -1,0 +1,5 @@
+@media all and (min-width: 500px) {
+  .vm-form {
+    margin: 2rem 20rem;
+  }
+}

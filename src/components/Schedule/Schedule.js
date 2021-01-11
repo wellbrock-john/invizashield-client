@@ -9,9 +9,9 @@ export default class Schedule extends Component {
     return (
       <div className="Schedule">
         <div className="greeting-div">
-          <h2 className="greeting">Hello {this.context.user.first_name}</h2>
+          <h2 className="greeting">Schedule Your Next Appointment</h2>
         </div>
-        <div className="dashboard-content">Schedule</div>{" "}
+        <div className="dashboard-content">Schedule</div>
       </div>
     );
   }

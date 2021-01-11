@@ -1,66 +1,112 @@
 import React, { Component } from "react";
 import Account from "../../components/Account/Account";
-import Contact from "../../components/Contact/Contact";
+import Profile from "../../components/Profile/Profile";
 import Schedule from "../../components/Schedule/Schedule";
 import Context from "../../Context";
+import TokenService from "../../services/token-service";
 import "./Dashboard.css";
 
 export default class Dashboard extends Component {
+  static contextType = Context;
+
   state = {
     accountClicked: true,
     scheduleClicked: false,
-    contactClicked: false,
-  }
+    profileClicked: false,
+    error: null,
+  };
 
   static contextType = Context;
+
+  componentDidMount() {
+    if (TokenService.hasAuthToken()) {
+      this.context.getData();
+    }
+  }
 
   handleAccountClicked = (e) => {
     e.preventDefault();
     this.setState({
       accountClicked: true,
       scheduleClicked: false,
-      contactClicked: false,
+      profileClicked: false,
     });
-  }
+  };
 
   handleScheduleClicked = (e) => {
     e.preventDefault();
     this.setState({
       accountClicked: false,
       scheduleClicked: true,
-      contactClicked: false,
-    })
-  }
+      profileClicked: false,
+    });
+  };
 
-  handleContactClicked = (e) => {
+  handleProfileClicked = (e) => {
     e.preventDefault();
     this.setState({
       accountClicked: false,
       scheduleClicked: false,
-      contactClicked: true,
-    })
-  }
+      profileClicked: true,
+    });
+  };
 
   render() {
+    const  user  = this.context.user || {};
+
     return (
-      <section className="dashboard-container">
+      <>
+      { user && user.id ? (<section className="dashboard-container">
         <div className="sidebar">
           <ul className="dashboard-ul">
-            <li><button className="li-btn" id="account-btn" name="account-btn" type="button" onClick={this.handleAccountClicked}>Account</button></li>
-            <li><button className="li-btn" id="schedule-btn" name="schedule-btn" type="button" onClick={this.handleScheduleClicked}>Schedule</button></li>
-            <li><button className="li-btn" id="contact-btn" name="contact-btn" type="button" onClick={this.handleContactClicked}>Contact</button></li>
+            <li>
+              <button
+                className="li-btn"
+                id="account-btn"
+                name="account-btn"
+                type="button"
+                onClick={this.handleAccountClicked}
+              >
+                Account
+              </button>
+            </li>
+            <li>
+              <button
+                className="li-btn"
+                id="schedule-btn"
+                name="schedule-btn"
+                type="button"
+                onClick={this.handleScheduleClicked}
+              >
+                Schedule
+              </button>
+            </li>
+            <li>
+              <button
+                className="li-btn"
+                id="profile-btn"
+                name="profile-btn"
+                type="button"
+                onClick={this.handleProfileClicked}
+              >
+                Profile
+              </button>
+            </li>
           </ul>
         </div>
         <div className="dashboard-main">
-          {
-            this.state.scheduleClicked
-            ? <Schedule />
-            : this.state.contactClicked
-            ? <Contact />
-            : <Account />
-            }
+          {this.state.scheduleClicked ? (
+            <Schedule />
+          ) : this.state.profileClicked ? (
+            <Profile />
+          ) : (
+            <Account />
+          )}
         </div>
-      </section>
+      </section>) : (
+        <h2>Loading Your Account</h2>
+      )}
+      </>
     );
   }
 }

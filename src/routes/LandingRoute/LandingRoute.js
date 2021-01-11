@@ -13,12 +13,12 @@ class LandingRoute extends Component {
               <i>Superior Protection.</i>
             </strong>
             <br />
-            <br />
-            So, Go Ahead...
+             <span className="slogan-span"> So, Go Ahead...
             <br />
             Drive It Like You Stole It.
             <br />
             <small> We Won't Tell. </small>
+            </span>
           </p>
           {!TokenService.hasAuthToken() && <LoginSignup />}
         </div>
