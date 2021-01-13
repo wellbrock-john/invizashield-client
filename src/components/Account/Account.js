@@ -11,7 +11,8 @@ export default class Account extends Component {
     return (
       <div className="Account">
         <div className="greeting-div">
-          <h2 className="greeting">Hello {user.first_name}</h2>
+          <h2 className="greeting">Hey {user.first_name}</h2>
+          <p className="welcome">Welcome to your personal Inviza-Garage</p>
         </div>
         <div className="dashboard-content">
           <DisplayVehicles />

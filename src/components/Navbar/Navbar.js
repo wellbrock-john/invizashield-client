@@ -4,40 +4,60 @@ import logo from "../../components/images/Logo/InvizaShieldLogoOpaque.png";
 import TokenService from "../../services/token-service";
 import Logout from "../Logout/Logout";
 import { MenuItems } from "../Menu/MenuItems";
+import { MenuItemsForNotLoggedIn } from "../Menu/MenuItemsForNotLoggedIn";
 import "./Navbar.css";
+import Context from "../../Context";
 
 export default class Navbar extends Component {
-  state = { clicked: false };
+	static contextType = Context;
 
-  handleClick = () => {
-    this.setState({ clicked: !this.state.clicked });
-  };
+	state = { clicked: false };
 
-  render() {
-    return (
-      <nav className="NavbarItems">
-        <Link id="navbar-logo" className="navbar-logo" to="/">
-          <img src={logo} alt="Logo" />
-        </Link>
-        <div className="menu-icon" onClick={this.handleClick}>
-          Menu{" "}
-          <i
-            className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}
-          ></i>
-        </div>
-        <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
-          {MenuItems.map((item, index) => {
-            return (
-              <li key={index}>
-                <a className={item.cName} href={item.url}>
-                  {item.title}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-        {TokenService.hasAuthToken() && <Logout />}
-      </nav>
-    );
-  }
+	handleClick = () => {
+		this.setState({ clicked: !this.state.clicked });
+	};
+
+	render() {
+		const { user } = this.context;
+
+		return (
+			<nav className="NavbarItems">
+				<Link id="navbar-logo" className="navbar-logo" to="/">
+					<img src={logo} alt="Logo" />
+				</Link>
+				<div className="menu-icon" onClick={this.handleClick}>
+					Menu{" "}
+					<i
+						className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}
+					></i>
+				</div>
+				{user && user.id ? (
+					<ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
+						{MenuItems.map((item, index) => {
+							return (
+								<li key={index}>
+									<a className={item.cName} href={item.url}>
+										{item.title}
+									</a>
+								</li>
+							);
+						})}
+					</ul>
+				) : (
+					<ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
+						{MenuItemsForNotLoggedIn.map((item, index) => {
+							return (
+								<li key={index}>
+									<a className={item.cName} href={item.url}>
+										{item.title}
+									</a>
+								</li>
+							);
+						})}
+					</ul>
+				)}
+				{TokenService.hasAuthToken() && <Logout />}
+			</nav>
+		);
+	}
 }

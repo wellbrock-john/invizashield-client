@@ -1,3 +1,9 @@
+.Account {
+    color: ivory;
+    padding-left: 1rem;
+    margin-top: 1rem;
+}
+
 @media all and (min-width: 500px) {
   .greeting-div {
     height: 10%;
