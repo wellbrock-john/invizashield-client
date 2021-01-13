@@ -9,7 +9,7 @@ class LoginSignup extends Component {
 	static contextType = Context;
 
 	state = {
-		form: "login",
+		form: "register",
 		error: null,
 	};
 	toggle = {
@@ -17,7 +17,7 @@ class LoginSignup extends Component {
 		register: "login",
 	};
 
-	onSubmit = async (e) => {
+	handleLogin = async (e) => {
 		e.preventDefault();
 		const {
 			first_name,
@@ -87,39 +87,50 @@ class LoginSignup extends Component {
 
 	render() {
 		return (
-			<div className="container">
+			<div className="container" id="login-container">
 				<div
 					style={{
 						transform: `translate(0px, ${
-							this.state.form === "login" ? 0 : 110
+							this.state.form === "login" ? 0 : 130
 						}px)`,
+						display: "flex",
+						flexDirection: "column",
 					}}
 					className="form-div"
 				>
-					<form onSubmit={this.onSubmit}>
+					<form className="login-reg-form" onSubmit={this.handleLogin}>
 						{this.state.form === "login" ? (
 							""
 						) : (
-							<input
-								placeholder="First Name"
-								type="text"
-								name="first_name"
-								id="first_name"
-								aria-label="First Name"
-								required
-							/>
+							<div className="register-div">
+								<label className="signup-label">
+									<strong>
+										Sign Up Here To Get Your <i>InvizaGarage&trade;</i>
+									</strong>
+								</label>
+								<input
+									placeholder="First Name"
+									type="text"
+									name="first_name"
+									id="first_name"
+									aria-label="First Name"
+									required
+								/>
+							</div>
 						)}
 						{this.state.form === "login" ? (
 							""
 						) : (
-							<input
-								placeholder="Last Name"
-								type="text"
-								name="last_name"
-								id="last_name"
-								aria-label="Last Name"
-								required
-							/>
+							<div className="register-div">
+								<input
+									placeholder="Last Name"
+									type="text"
+									name="last_name"
+									id="last_name"
+									aria-label="Last Name"
+									required
+								/>
+							</div>
 						)}
 						{this.state.form === "login" ? (
 							""
@@ -153,6 +164,17 @@ class LoginSignup extends Component {
 						{this.state.form === "login" ? (
 							""
 						) : (
+							<small>
+								<strong>
+									Password must be more than 7 characters and contain at least
+									<br />
+									one uppercase, lowercase, number and special character
+								</strong>
+							</small>
+						)}
+						{this.state.form === "login" ? (
+							""
+						) : (
 							<input
 								placeholder="Confirm Password"
 								type="password"
@@ -170,8 +192,10 @@ class LoginSignup extends Component {
 				<div
 					style={{
 						transform: `translate(0px, ${
-							this.state.form === "login" ? 0 : -300
+							this.state.form === "login" ? -60 : -480
 						}px)`,
+						display: "flex",
+						flexDirection: "column",
 					}}
 					className="button-div"
 				>

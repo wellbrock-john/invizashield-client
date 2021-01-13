@@ -1,4 +1,4 @@
-export const MenuItems = [
+export const MenuItemsForNotLoggedIn = [
 	{
 		title: "Home",
 		url: "/",
@@ -6,7 +6,7 @@ export const MenuItems = [
 	},
 	{
 		title: "InvizaGarage",
-		url: "/dashboard",
+		url: "#login-container",
 		cName: "nav-links",
 	},
 	{

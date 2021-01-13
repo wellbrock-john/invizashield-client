@@ -1,53 +1,83 @@
 .LandingRoute {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.616);
+	border-radius: 3px;
+	border-top: 3px solid gold;
+	color: white;
+	letter-spacing: 0.5px;
 }
 
 .slogan {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
 }
 
 .slogan-span {
-    align-self: flex-end;
+	align-self: flex-end;
 }
 
 .container {
-    width: initial;
+	width: initial;
+	color: black;
+}
+
+article {
+	padding: 25px;
+	text-align: center;
+}
+
+.fa-check {
+	color: gold;
+}
+
+.reel-me-in {
+	text-align: center;
+}
+
+.fa-crown {
+	color: gold;
+}
+
+.reel-me-in-section {
+	margin-top: 7rem;
 }
 
 @media all and (max-width: 600px) {
-    .slogan-span {
-        display: none;
-    }
+	.slogan-span {
+		display: none;
+	}
 }
 
 @media all and (min-width: 500px) {
-  .LandingRoute {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-  }
+	.LandingRoute {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: center;
+	}
 
-  .paragraph-plus-form-div {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    height: 100%;
-    width: 100%;
-    margin-bottom: 4rem;
-  }
+	.paragraph-plus-form-div {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		height: 100%;
+		width: 100%;
+		margin-bottom: 4rem;
+	}
 
-  .slogan {
-    font-size: 2.5rem;
-    text-align: center;
-    width: 500px;
-  }
+	.slogan {
+		font-size: 2.5rem;
+		text-align: center;
+		width: 500px;
+	}
 
-  .reviews-div {
-    margin: 10rem 10rem 0 10rem;
-  }
+	.reviews-div {
+		margin: 10rem 10rem 0 10rem;
+	}
+}
+
+@media all and (max-width: 750px) {
 }

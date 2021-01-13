@@ -1,32 +1,56 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 400px;
-  height: 420px;
-  align-items: center;
-  border: solid black 1px;
-  border-radius: 5px;
-  background-color: silver;
-  margin: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 400px;
+	min-height: 600px;
+	align-items: center;
+	border: solid black 1px;
+	border-radius: 5px;
+	background-color: silver;
+	margin: 2rem;
 }
 .form-div {
-  z-index: 1;
+	z-index: 1;
 }
 .form-div,
 .button-div {
-  transition: 0.5s ease-out;
+	transition: 0.5s ease-out;
 }
-form {
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  background-color: white;
+.login-reg-form {
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
 }
 input,
 button {
-  margin: 5px;
+	margin: 5px;
+}
+
+small {
+	font-size: x-small;
+	letter-spacing: 1px;
+	padding: 0 10px;
+	text-align: center;
+}
+
+#phone_num {
+	height: 2rem;
+	margin-left: 6px;
+}
+
+.register-div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+}
+
+.signup-label {
+	text-align: center;
+	padding: 10px 0;
 }
 
 /*SKELETON CSS*/
@@ -37,19 +61,19 @@ input[type="password"],
 input[type="email"],
 textarea,
 select {
-  height: 38px;
-  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
-  background-color: #fff;
-  border: 1px solid #d1d1d1;
-  border-radius: 4px;
-  box-shadow: none;
-  box-sizing: border-box;
+	height: 38px;
+	padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+	background-color: #fff;
+	border: 1px solid #d1d1d1;
+	border-radius: 4px;
+	box-shadow: none;
+	box-sizing: border-box;
 }
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus textarea:focus {
-  border: 1px solid gold;
-  outline: 0;
+	border: 1px solid gold;
+	outline: 0;
 }
 
 /*BUTTON STYLING*/
@@ -58,23 +82,23 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-  display: inline-block;
-  height: 38px;
-  padding: 0 30px;
-  color: black;
-  text-align: center;
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 38px;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  white-space: nowrap;
-  background-color: transparent;
-  border-radius: 4px;
-  border: 1px solid gold;
-  cursor: pointer;
-  box-sizing: border-box;
+	display: inline-block;
+	height: 38px;
+	padding: 0 30px;
+	color: black;
+	text-align: center;
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 38px;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+	text-decoration: none;
+	white-space: nowrap;
+	background-color: transparent;
+	border-radius: 4px;
+	border: 1px solid gold;
+	cursor: pointer;
+	box-sizing: border-box;
 }
 .button:hover,
 button:hover,
@@ -86,18 +110,18 @@ button:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
-  color: black;
-  border-color: gold;
-  outline: 0;
+	color: black;
+	border-color: gold;
+	outline: 0;
 }
 .button.button-primary,
 button.button-primary,
 input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
-  color: black;
-  background-color: gold;
-  border-color: gold;
+	color: black;
+	background-color: gold;
+	border-color: gold;
 }
 .button.button-primary:hover,
 button.button-primary:hover,
@@ -109,7 +133,7 @@ button.button-primary:focus,
 input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
-  color: black;
-  background-color: gold;
-  border-color: gold;
+	color: black;
+	background-color: gold;
+	border-color: gold;
 }
