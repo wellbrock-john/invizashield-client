@@ -14,7 +14,6 @@ class DisplayVehicles extends Component {
 
   render() {
     const { vehicles } = this.context;
-
     return (
       <div className="DisplayVehicles">
         <ul className="vehicles-list">
@@ -32,7 +31,7 @@ class DisplayVehicles extends Component {
                 >
                   <strong>--</strong> Edit
                 </Link>
-                <button className="delete-vehicle" type="submit" onClick={() => this.handleDelete(vehicle.id)}>
+                <button className="delete-vehicle" type="submit" onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) this.handleDelete(vehicle.id) }}>
                   Delete
                 </button>
               </li>
