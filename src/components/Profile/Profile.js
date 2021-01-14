@@ -40,7 +40,7 @@ export default class Profile extends Component {
 					<br />
 					<label htmlFor="phone_num">Phone</label>
 					<input
-						className="profile-form-input"
+						className="profile-form-phone-num"
 						id="phone_num"
 						name="phone_num"
 						aria-label="Phone Number"
@@ -62,6 +62,7 @@ export default class Profile extends Component {
 						required
 					/>
 					<input
+						className="profile-save-btn"
 						type="submit"
 						name="submit"
 						value="Save"

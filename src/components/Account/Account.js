@@ -12,7 +12,9 @@ export default class Account extends Component {
 			<div className="Account">
 				<div className="greeting-div">
 					<h2 className="greeting">Hey {user.first_name}</h2>
-					<p className="welcome">Welcome to your personal InvizaGarage</p>
+					<p className="welcome">
+						Welcome to your personal InvizaGarage&trade;
+					</p>
 				</div>
 				<div className="dashboard-content">
 					<DisplayVehicles />

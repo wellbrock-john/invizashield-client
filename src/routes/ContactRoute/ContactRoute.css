@@ -1,13 +1,14 @@
 .Contact {
-    background-color: rgba(0, 0, 0, 0.507);
+	background-color: rgba(0, 0, 0, 0.507);
 }
 
-.greeting, .contact-body {
+.greeting,
+.contact-body {
 	color: white;
-    text-align: center;
-    margin: 20px;
+	text-align: center;
+	margin: 20px;
 }
 
 a {
-    color: gold;
+	color: gold;
 }

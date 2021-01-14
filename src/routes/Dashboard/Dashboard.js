@@ -57,7 +57,7 @@ export default class Dashboard extends Component {
 		return (
 			<>
 				{user && user.id ? (
-					<section className="container">
+					<section id="container">
 						<div className="sidebar">
 							<ul className="dashboard-ul">
 								<li>
@@ -68,7 +68,7 @@ export default class Dashboard extends Component {
 										type="button"
 										onClick={this.handleAccountClicked}
 									>
-										Account
+										Garage
 									</button>
 								</li>
 								<li>

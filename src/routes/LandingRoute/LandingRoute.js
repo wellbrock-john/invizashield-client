@@ -47,19 +47,24 @@ class LandingRoute extends Component {
 							satisfied clients and their vehicles.
 						</article>
 					</section>
-					<section className="reel-me-in-section">
-						<h3 className="reel-me-in">
-							Do you like special offers?
-							<br />
-							...of course you do!
-						</h3>
-						<p className="reel-me-in">
-							Sign up for an Account below and we'll give you 5% off your next{" "}
-							<Link to={"/services"}>package</Link> purchase.{" "}
-							<i class="fas fa-hand-holding-usd" />
-						</p>
-						{!TokenService.hasAuthToken() && <LoginSignup />}
-					</section>
+
+					{!TokenService.hasAuthToken() ? (
+						<section className="reel-me-in-section">
+							<h3 className="reel-me-in">
+								Do you like special offers?
+								<br />
+								...of course you do!
+							</h3>
+							<p className="reel-me-in">
+								Sign up for an Account below and we'll give you 5% off your next{" "}
+								<Link to={"/services"}>package</Link> purchase.{" "}
+								<i className="fas fa-hand-holding-usd" />
+							</p>
+							<LoginSignup />
+						</section>
+					) : (
+						""
+					)}
 				</div>
 			</section>
 		);

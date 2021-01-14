@@ -1,3 +1,17 @@
+#container {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: right;
+	background-color: rgba(0, 0, 0, 0.39);
+	border-radius: 3px;
+	border-top: 3px solid gold;
+	padding-left: 10px;
+}
+
+.dashboard-main {
+	width: 100%;
+}
+
 .sidebar {
 	color: ivory;
 	padding-left: 1rem;

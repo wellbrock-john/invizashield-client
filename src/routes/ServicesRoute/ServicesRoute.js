@@ -40,9 +40,14 @@ export default class ServicesRoute extends Component {
 							height="260px"
 						/>
 					</div>
+					<br />
+					<h3 style={{ margin: "2rem" }}>
+						We do it right, so that you won't know it's there until it's doing
+						it's job.
+					</h3>
 				</div>
 				<div className="arch-div">
-					<h3>CeramicPro</h3>
+					<h3 className="cp-h3">CeramicPro</h3>
 					<h5>
 						Installation by:
 						<br />
@@ -56,7 +61,7 @@ export default class ServicesRoute extends Component {
 					</h5>
 					<div className="services-div">
 						<p className="vid-description">
-							The Money Shot <i className="fas fa-long-arrow-alt-down" />
+							How it will look <i className="fas fa-long-arrow-alt-down" />
 						</p>
 						<ReactPlayer
 							url="https://youtu.be/Qnp-UeTge0Q"
