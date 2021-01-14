@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 class LandingRoute extends Component {
 	render() {
 		return (
-			<section className="LandingRoute">
+			<section className="LandingRoute" id="Route">
 				<div className="paragraph-plus-form-div">
-					<p className="slogan">
+					<h2 className="greeting">
 						<strong>
 							<i>Superior Protection.</i>
 							<br />
@@ -24,7 +24,7 @@ class LandingRoute extends Component {
 							<br />
 							<small> We Won't Tell. </small>
 						</span>
-					</p>
+					</h2>
 					<section>
 						<article>
 							Concours d'Elegance Award Winning installation quality?{" "}
@@ -39,11 +39,11 @@ class LandingRoute extends Component {
 							<i className="fas fa-check"></i>
 							<br />
 							<br />
-							Commitment your satisfaction? <i className="fas fa-check" />
+							Commitment to your satisfaction? <i className="fas fa-check" />
 							<br />
 							<br />
 							Still need convincing that you've found the shop for you? Checkout
-							our gallery page and see an infinitesimal fraction of our
+							our gallery page and see a small fraction of the long list of our
 							satisfied clients and their vehicles.
 						</article>
 					</section>
@@ -55,7 +55,8 @@ class LandingRoute extends Component {
 						</h3>
 						<p className="reel-me-in">
 							Sign up for an Account below and we'll give you 5% off your next{" "}
-							<Link to={"/services"}>package</Link> purchase.
+							<Link to={"/services"}>package</Link> purchase.{" "}
+							<i class="fas fa-hand-holding-usd" />
 						</p>
 						{!TokenService.hasAuthToken() && <LoginSignup />}
 					</section>

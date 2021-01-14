@@ -8,7 +8,7 @@ export default class ContactRoute extends Component {
 	render() {
 		const { user } = this.context;
 		return (
-			<div className="Contact">
+			<section className="Contact" id="Route">
 				{user && user.id ? (
 					<h2 className="greeting">Hey {user.first_name},</h2>
 				) : (
@@ -43,7 +43,7 @@ export default class ContactRoute extends Component {
 						<ContactForm />
 					</div>
 				</section>
-			</div>
+			</section>
 		);
 	}
 }

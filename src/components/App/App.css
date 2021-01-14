@@ -2,11 +2,22 @@ main {
 	overflow: scroll;
 }
 
+#Route {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.616);
+	border-radius: 3px;
+	border-top: 3px solid gold;
+	color: white;
+	letter-spacing: 0.5px;
+}
+
 @media all and (min-width: 500px) {
-  .App {
-    min-height: 100vh;
-    text-align: center;
-    background-image: url(../images/AdobeStock_274008098.jpeg);
-    background-size: cover;
-  }
+	.App {
+		min-height: 100vh;
+		text-align: center;
+		background-image: url(../images/AdobeStock_274008098.jpeg);
+		background-size: cover;
+	}
 }
