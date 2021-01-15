@@ -16,11 +16,10 @@ class LandingRoute extends Component {
 							<i>Competitive Pricing.</i>
 						</strong>
 						<br />
+						<br />
 						<span className="slogan-span">
 							{" "}
-							So, Go Ahead...
-							<br />
-							Drive It Like You Stole It.
+							So, Go Ahead... Drive It Like You Stole It.
 							<br />
 							<small> We Won't Tell. </small>
 						</span>
