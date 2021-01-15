@@ -39,7 +39,7 @@ export default class ContactRoute extends Component {
 					</h4>
 				)}
 				<section>
-					<div>
+					<div className="contact-form-div">
 						<ContactForm />
 					</div>
 				</section>

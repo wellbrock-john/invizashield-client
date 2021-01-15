@@ -16,6 +16,22 @@
 	letter-spacing: 1px;
 }
 
-.cp-h3 {
+.cp-link {
 	margin-top: 4rem;
+	color: rgb(228, 0, 121);
+}
+
+@media all and (min-width: 500px) {
+	.arch-div {
+		border-top: none;
+		margin-bottom: 8rem;
+	}
+}
+
+@media all and (min-width: 1000px) {
+	.services-div {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
 }

@@ -29,7 +29,7 @@ class Navbar extends Component {
 			});
 		} else this.setState({ 
 			clicked: false,
-			hidden: false,
+			hidden: true,
 		});
 	}
 
@@ -38,7 +38,7 @@ class Navbar extends Component {
 
 		return (
 			<nav className="NavbarItems">
-				<Link id="navbar-logo" className="navbar-logo" to="/">
+				<Link id="navbar-logo" className="navbar-logo" to={"/"}>
 					<img src={logo} alt="Logo" />
 				</Link>
 				<div className="menu-icon" onClick={this.handleClick}>

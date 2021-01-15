@@ -75,7 +75,8 @@
 	}
 
 	.nav-links:hover {
-		background-color: red;
+		background-color: black;
+		color: white;
 		border-radius: 4px;
 		transition: all 0.2s ease-in-out;
 	}
@@ -90,6 +91,12 @@
 		color: rgb(95, 9, 9);
 		font-size: 1.6rem;
 		font-weight: 900;
+	}
+}
+
+@media all and (min-width: 1000px) {
+	.hidden-message {
+		top: 19rem;
 	}
 }
 

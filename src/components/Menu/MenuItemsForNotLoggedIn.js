@@ -5,7 +5,7 @@ export const MenuItemsForNotLoggedIn = [
 		cName: "nav-links",
 	},
 	{
-		title: "InvizaGarage",
+		title: `InvizaGarage\&#8482;`,
 		url: "../#login-container",
 		cName: "nav-links",
 	},
