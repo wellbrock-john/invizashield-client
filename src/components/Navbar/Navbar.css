@@ -83,6 +83,14 @@
 	.nav-links-mobile {
 		display: none;
 	}
+
+	.hidden-message {
+		position: absolute;
+		top: 16.7rem;
+		color: rgb(95, 9, 9);
+		font-size: 1.6rem;
+		font-weight: 900;
+	}
 }
 
 @media screen and (max-width: 1000px) {

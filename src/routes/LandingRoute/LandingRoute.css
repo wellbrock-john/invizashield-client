@@ -14,8 +14,14 @@
 }
 
 article {
-	padding: 25px;
+	padding: 1.2rem;
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.article-span {
+	margin-bottom: 1rem;
 }
 
 .fa-check {
@@ -24,14 +30,57 @@ article {
 
 .reel-me-in {
 	text-align: center;
+	padding: 0 1rem;
 }
 
-.fa-crown {
-	color: gold;
+.fa-hand-holding-usd {
+	color: green;
+	font-size: 1.3rem;
 }
 
 .reel-me-in-section {
 	margin-top: 7rem;
+}
+
+@media all and (min-width: 500px) {
+	article {
+		width: 36vw;
+		text-align: left;
+		display: flex;
+		flex-wrap: wrap;
+		border: 4px ridge rgba(255, 217, 0, 0.76);
+		border-radius: 5px;
+		margin-top: 10.3rem;
+		margin-left: .5rem;
+		background-color: rgba(0, 0, 0, 0.473);
+	}
+
+	.article-span {
+		margin-bottom: 1.2rem;
+		display: flex;
+		padding: .3rem;
+		border: 2px solid gray;
+		border-radius: 5px;
+	}
+
+	.fa-check {
+		align-self: center;
+		font-size: 2.5rem;
+		margin-left: .5rem;
+	}
+
+	.shhh {
+		font-size: medium;
+	}
+
+	.paragraph-plus-form-div {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.reel-me-in-section {
+		margin-top: 0;
+	}
 }
 
 @media all and (max-width: 600px) {
@@ -40,8 +89,8 @@ article {
 	}
 }
 
-@media all and (min-width: 600px) {
-}
-
-@media all and (max-width: 750px) {
+@media all and (min-width: 1000px) {
+	.landing-greeting {
+		font-size: 3rem;
+	}
 }

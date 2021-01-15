@@ -6,7 +6,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	background-color: rgba(0, 0, 0, 0.616);
+	background-color: rgba(0, 0, 0, 0.719);
 	border-radius: 3px;
 	border-top: 3px solid gold;
 	color: white;
@@ -21,5 +21,6 @@ main {
 
 	#Route {
 		border-top: none;
+		
 	}
 }
