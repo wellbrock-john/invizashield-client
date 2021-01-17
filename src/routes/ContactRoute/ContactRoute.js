@@ -24,15 +24,15 @@ export default class ContactRoute extends Component {
 					</h4>
 				) : (
 					<h4 className="contact-body">
-						You can fill out a free quote request from our services page
+						<i class="fas fa-share"> {" "}Fill out a free quote request on our services page</i>
 						<br />
-						Or
+						
 						<br />
-						Send us an email below
+						<i class="fas fa-share">{" "}Send us an email below</i>
 						<br />
-						Or
+						
 						<br />
-						Call the owner, John Wellbrock, at
+						<i class="fas fa-share">{" "}Call the owner, John Wellbrock, at</i>
 						<div>
 							<a href="tel:+1-513-703-4235">+1 (513) 703-4196</a>
 						</div>

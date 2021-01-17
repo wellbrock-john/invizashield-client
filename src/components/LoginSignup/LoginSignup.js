@@ -91,7 +91,7 @@ class LoginSignup extends Component {
 				<div
 					style={{
 						transform: `translate(0px, ${
-							this.state.form === "login" ? 0 : 130
+							this.state.form === "login" ? 60 : 130
 						}px)`,
 						display: "flex",
 						flexDirection: "column",
@@ -144,6 +144,7 @@ class LoginSignup extends Component {
 								aria-label="Phone Number"
 								required
 							/>
+							
 						)}
 						<input
 							placeholder="Email"

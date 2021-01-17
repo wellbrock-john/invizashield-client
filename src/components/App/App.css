@@ -1,5 +1,5 @@
 main {
-	overflow: scroll;
+	overflow: auto;
 }
 
 #Route {
@@ -13,6 +13,7 @@ main {
 	letter-spacing: 0.5px;
 }
 
+/*---------- @MEDIA MIN-WIDTH ----------*/
 @media all and (min-width: 500px) {
 	.App {
 		min-height: 100vh;

@@ -23,6 +23,9 @@
 	right: calc(-6rem + 2vw)
 }
 
+/*---------- @MEDIA MIN-WIDTH ----------*/
+
+
 @media all and (min-width: 500px) {
 	.nav {
 		margin-bottom: 0;
@@ -87,19 +90,60 @@
 
 	.hidden-message {
 		position: absolute;
-		top: 16.7rem;
-		color: rgb(95, 9, 9);
-		font-size: 1.6rem;
-		font-weight: 900;
+		top: 38.1rem;
+		right: calc(-12rem + 32vw);
+		color: rgb(255, 35, 35);
+		font-size: .9rem;
+	}
+}
+
+@media all and (min-width: 601px) {
+	.hidden-message {
+		position: absolute;
+		top: 36.5rem;
+		right: calc(-12rem + 32vw);
+		color: rgb(255, 35, 35);
+		font-size: .9rem;
+	}
+}
+
+@media all and (min-width: 740px) {
+	.hidden-message {
+		position: absolute;
+		top: 35.5rem;
+		right: calc(-14rem + 35vw);
+		color: rgb(255, 35, 35);
+		font-size: .9rem;
+	}
+}
+
+@media all and (min-width: 850px) {
+	.hidden-message {
+		position: absolute;
+		top: 35.5rem;
+		right: calc(-13rem + 30.5vw);
+		color: rgb(255, 35, 35);
+		font-size: 1rem;
 	}
 }
 
 @media all and (min-width: 1000px) {
 	.hidden-message {
-		top: 19rem;
+		font-weight: 900;
+		font-size: 1.2rem;
+		top: 38rem;
+		right: calc(-39rem + calc(3.2rem + 61.7vw));
 	}
 }
 
+@media all and (min-width: 1287px) {
+	.hidden-message {
+		top: 36.5rem;
+		right: 14.4rem;
+	}
+}
+
+/*---------- @MEDIA MAX-WIDTH ----------*/
 @media screen and (max-width: 1000px) {
 	.NavbarItems {
 		position: relative;
@@ -152,5 +196,26 @@
 		transform: translate(-100%, 60%);
 		font-size: 1.8rem;
 		cursor: pointer;
+	}
+
+	@media all and (max-width: 740px) {
+		.hidden-message {
+			width: 20rem;
+		}
+	}
+
+	@media all and (max-width: 600px) {
+		.hidden-message {
+			width: 15rem;
+			right: calc(-12rem + 38.7vw);
+
+		}
+	}
+
+	@media all and (max-width: 579px) {
+		.hidden-message {
+			right: calc(-12rem + 39.2vw);
+			top: 31rem;
+		}
 	}
 }
