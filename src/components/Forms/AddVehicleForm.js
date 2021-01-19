@@ -7,7 +7,7 @@ export default class AddVehicleForm extends Component {
 
 render() {
   return (
-    <form className="vm-form" id="vm-form" name="vm-form" aria-label="Add vehicle form" onSubmit={e => this.context.handleSubmitVehicle(e)}>
+    <form className="add-vm-form" id="vm-form" name="vm-form" aria-label="Add vehicle form" onSubmit={e => this.context.handleSubmitVehicle(e)}>
       <label htmlFor="veh-year">Year</label>
       <input
         className="vm-form-input"

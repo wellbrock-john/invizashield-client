@@ -9,7 +9,6 @@
 }
 
 .container {
-	width: initial;
 	color: black;
 }
 
@@ -40,6 +39,10 @@ article {
 
 .reel-me-in-section {
 	margin-top: 7rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 @media all and (min-width: 500px) {
@@ -109,7 +112,7 @@ article {
 	}
 }
 
-@media all and (max-width: 519px) {
+@media all and (max-width: 520px) {
 	.hidden-message {
 		display: none;
 	}

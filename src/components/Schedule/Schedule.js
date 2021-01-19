@@ -17,7 +17,8 @@ export default class Schedule extends Component {
 					</h4>
 					<p>
 						If you would like to speak with him sooner, then please call
-						513-703-4235
+						<br />
+						<a href="tel:+1-513-703-4235">+1 (513) 703-4235</a>
 					</p>
 				</div>
 			</div>

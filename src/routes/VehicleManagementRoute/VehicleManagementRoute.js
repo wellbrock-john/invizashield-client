@@ -13,7 +13,7 @@ export default class VehicleManagementRoute extends Component {
 				(v) => v.id == Number(this.props.match.params.id)
 			) || {};
 		return (
-			<div className="VehicleManagementRoute" id="Route">
+			<div className="VehicleManagementRoute">
 				{vehicle &&
 				vehicle.id &&
 				vehicle.id.toString() === this.props.match.params.id ? (

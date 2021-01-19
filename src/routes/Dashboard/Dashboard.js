@@ -62,7 +62,7 @@ export default class Dashboard extends Component {
 							<ul className="dashboard-ul">
 								<li>
 									<button
-										className="li-btn"
+										className="dash-li-btn"
 										id="account-btn"
 										name="account-btn"
 										type="button"
@@ -73,7 +73,7 @@ export default class Dashboard extends Component {
 								</li>
 								<li>
 									<button
-										className="li-btn"
+										className="dash-li-btn"
 										id="schedule-btn"
 										name="schedule-btn"
 										type="button"
@@ -84,7 +84,7 @@ export default class Dashboard extends Component {
 								</li>
 								<li>
 									<button
-										className="li-btn"
+										className="dash-li-btn"
 										id="profile-btn"
 										name="profile-btn"
 										type="button"

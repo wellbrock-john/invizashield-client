@@ -1,27 +1,25 @@
-main {
-	overflow: auto;
-}
-
 #Route {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	background-color: rgba(0, 0, 0, 0.719);
-	border-radius: 3px;
-	border-top: 3px solid gold;
-	color: white;
-	letter-spacing: 0.5px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.719);
+  border-radius: 3px;
+  border-top: 3px solid gold;
+  color: white;
+  letter-spacing: 0.5px;
 }
 
 /*---------- @MEDIA MIN-WIDTH ----------*/
 @media all and (min-width: 500px) {
-	.App {
-		min-height: 100vh;
-		text-align: center;
-	}
+  .App {
+    min-height: 100vh;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.603);
 
-	#Route {
-		border-top: none;
-		
-	}
+  }
+
+  #Route {
+	border-top: none;
+	background-color: transparent;
+  }
 }

@@ -59,7 +59,7 @@
 
 	.nav-menu {
 		width: 100vw !important;
-		margin: 0 2rem 0 0;
+		margin: 0 1rem 0 0;
 		display: grid;
 		grid-template-columns: repeat(5, auto);
 		grid-gap: 10px;
@@ -117,29 +117,17 @@
 	}
 }
 
-@media all and (min-width: 850px) {
-	.hidden-message {
-		position: absolute;
-		top: 35.5rem;
-		right: calc(-13rem + 30.5vw);
-		color: rgb(255, 35, 35);
-		font-size: 1rem;
-	}
-}
-
 @media all and (min-width: 1000px) {
 	.hidden-message {
 		font-weight: 900;
-		font-size: 1.2rem;
 		top: 38rem;
-		right: calc(-39rem + calc(3.2rem + 61.7vw));
+		right: calc(-12rem + 30vw);
 	}
 }
 
 @media all and (min-width: 1287px) {
 	.hidden-message {
-		top: 36.5rem;
-		right: 14.4rem;
+		right: 12.2rem;
 	}
 }
 
@@ -198,24 +186,42 @@
 		cursor: pointer;
 	}
 
-	@media all and (max-width: 740px) {
+	@media all and (max-width: 858px) {
 		.hidden-message {
 			width: 20rem;
 		}
 	}
 
+	@media all and (max-width: 708px) {
+		.hidden-message {
+			top: 37rem;
+		}
+	}
+
+	@media all and (max-width: 633px) {
+		.hidden-message {
+			width: 13rem;
+			top: 37.8rem;
+			right: calc(-12rem + 42vw);
+		}
+	}
+
+	@media all and (max-width: 607px) {
+		.hidden-message {
+			top: 38.6rem;
+		}
+	}
+
 	@media all and (max-width: 600px) {
 		.hidden-message {
-			width: 15rem;
-			right: calc(-12rem + 38.7vw);
-
+			top: 39rem;
 		}
 	}
 
 	@media all and (max-width: 579px) {
 		.hidden-message {
-			right: calc(-12rem + 39.2vw);
-			top: 31rem;
+			top: 33rem;
+			right: calc(-12rem + 42vw);
 		}
 	}
 }

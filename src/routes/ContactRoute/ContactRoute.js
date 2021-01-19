@@ -19,20 +19,20 @@ export default class ContactRoute extends Component {
 						If you need to reach us, you can send a quick and easy email down
 						below or you can call or text John at
 						<div>
-							<a href="tel:+1-513-703-4235">+1 (513) 703-4196</a>
+							<a href="tel:+1-513-703-4235">+1 (513) 703-4235</a>
 						</div>
 					</h4>
 				) : (
 					<h4 className="contact-body">
-						<i class="fas fa-share"> {" "}Fill out a free quote request on our services page</i>
+						<i className="fas fa-share"> {" "}Fill out a free quote request on our services page</i>
 						<br />
 						
 						<br />
-						<i class="fas fa-share">{" "}Send us an email below</i>
+						<i className="fas fa-share">{" "}Send us an email below</i>
 						<br />
 						
 						<br />
-						<i class="fas fa-share">{" "}Call the owner, John Wellbrock, at</i>
+						<i className="fas fa-share">{" "}Call the owner, John Wellbrock, at</i>
 						<div>
 							<a href="tel:+1-513-703-4235">+1 (513) 703-4196</a>
 						</div>

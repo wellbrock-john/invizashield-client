@@ -25,7 +25,7 @@
 	margin: 0 7px 0 0;
 }
 
-.li-btn {
+.dash-li-btn {
 	padding: 0;
 	margin: 0 5px 10px 0;
 	width: 100%;
@@ -37,11 +37,11 @@
 	color: ivory;
 }
 
-.li-btn:active {
+.dash-li-btn:active {
 	color: gold;
 }
 
-.li-btn:hover {
+.dash-li-btn:hover {
 	color: gold;
 }
 
@@ -50,41 +50,70 @@
 }
 
 @media all and (min-width: 500px) {
-	.dashboard-container {
+	#container {
 		display: flex;
 		flex-direction: row;
 		justify-content: left;
-		margin: 5% 20%;
+		margin: 5% calc(-1rem + 15vw);
 		min-height: 500px;
+		height: 100%;
+		border-top: none;
+		background-color: transparent;
 	}
 
 	.sidebar {
-		width: 15%;
+		width: 30%;
+		height: auto;
+		margin: 0;
+		padding: 0;
 	}
 
 	.dashboard-ul {
-		height: 500px;
 		list-style: none;
-		border: solid gold 8px;
-		background-color: maroon;
-		border-radius: 10px 0 0 10px;
-		padding: 5px 0 0 0;
+		padding: 0;
 		margin: 0;
 	}
 
-	.li-btn {
+	.dashboard-ul li {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.dash-li-btn {
+		margin-right: 0;
 		background-color: gold;
+		color: black;
 		line-height: 3rem;
 		border-radius: 5px 0 0 5px;
-		margin-left: 0.7rem;
+		padding-left: 10px;
+		text-align: left;
+		width: 100%;
+		max-width: 150px;
+		border: none;
+	}
+
+	.dash-li-btn:active {
+		background-color: black;
+		color: ivory;
+	}
+	
+	.dash-li-btn:hover {
+		background-color: black;
+		color: ivory;
+	}
+
+	.dash-li-btn:visited {
+		background-color: black;
+		color: ivory;
 	}
 
 	.dashboard-main {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
+		max-width: 520px;
 		border: solid gold 8px;
 		border-radius: 0 10px 10px 0;
-		background-color: lightslategray;
+		background-color: black;
 	}
 }

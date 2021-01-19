@@ -13,3 +13,19 @@
   padding: 0;
   margin: 0;
 }
+
+@media all and (min-width: 500px) {
+  .logout-btn {
+    position: absolute;
+    right: .5rem;
+    top: 0rem;
+  }
+}
+
+@media all and (min-width: 1000px) {
+  .logout-btn {
+    position: absolute;
+    right: .7rem;
+    top: 5rem;
+  }
+}

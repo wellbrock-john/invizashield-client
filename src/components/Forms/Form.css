@@ -1,5 +1,30 @@
+.vm-form {
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+  background-color: white;
+  width: 80%;
+  max-width: 500px;
+}
+
+.add-vm-form {
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+  background-color: white;
+  margin: 2rem calc(-10rem + 52vw);
+  min-width: 300px;
+  max-width: 500px;
+}
+
 @media all and (min-width: 500px) {
+  .add-vm-form {
+    margin: 6rem calc(-10rem + 44vw) 6rem calc(-10rem + 47vw);
+  }
+
   .vm-form {
-    margin: 2rem 20rem;
+    margin: 6rem 20rem;
   }
 }
