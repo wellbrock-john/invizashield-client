@@ -99,6 +99,7 @@ class LoginSignup extends Component {
 					className="form-div"
 				>
 					<form className="login-reg-form" onSubmit={this.handleLogin}>
+						{this.state.error && (<p className="error">{this.state.error}</p> )}
 						{this.state.form === "login" ? (
 							""
 						) : (

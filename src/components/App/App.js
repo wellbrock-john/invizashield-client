@@ -18,7 +18,7 @@ import AddVehicleForm from "../Forms/AddVehicleForm";
 
 export default class App extends Component {
 	state = {
-		hasError: false,
+		error: null,
 		confirmation: false,
 		user: {},
 		vehicles: [],
@@ -39,20 +39,30 @@ export default class App extends Component {
 			fetch(`${Config.API_ENDPOINT}/users`, options)
 				.then((res) => {
 					if (!res.ok) {
-						return Promise.reject(res.statusText);
+						throw new Error("Something went wrong, please try again later.");
 					}
 					return res.json();
 				})
-				.then((user) => this.setState({ user }));
+				.then((user) => this.setState({ user })
+				.catch((err) => {
+					this.setState({
+						error: err.message,
+					})
+				}));
 
 			fetch(`${Config.API_ENDPOINT}/vehicles`, options)
 				.then((res) => {
 					if (!res.ok) {
-						return Promise.reject(res.statusText);
+						throw new Error("Something went wrong, please try again later.");
 					}
 					return res.json();
 				})
-				.then((vehicles) => this.setState({ vehicles }));
+				.then((vehicles) => this.setState({ vehicles })
+				.catch((err) => {
+					this.setState({
+						error: err.message,
+					})
+				}));
 		},
 
 		handleSubmitUser: (e) => {

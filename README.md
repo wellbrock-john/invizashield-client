@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# InvizaShield
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## This application will stand as a gift to my father to be used for his business, Invizashield LLC, and serve as a grand gesture of appreciation and gratitude for his support thorugh this transitional period of my life going from 'shop boy' to Software Engineer. The goal of building this application was to create a website that brings Invizashield's online presence into a higher class. It was built with the styling intentions to deliver information to clients that will catch the eye and provide persuasive bits of information to earn business. User account creation allows for streamlined communications between my father and his client's and email components built into the site also allow for quick messaging from clients directly to my father's email.
 
-## Available Scripts
+```
+Demo Account Credentials:
+email: demo@demo.com
+password: P@ssword1234
+```
 
-In the project directory, you can run:
+[Live Site]()
 
-### `npm start`
+[Frontend Repo](https://github.com/wellbrock-john/ivizashield-client)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Backend Repo](https://github.com/wellbrock-john/invizashield-server)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## Screenshots
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Landing (Home) Page
 
-### `npm run build`
+![Landing Page]()
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+When you get to the landing page, there are instructions for signing up, logging into your account or using the Demo account.
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Dashboard Page
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Dashboard Page]()
 
-### `npm run eject`
+```
+The user's dashboard page provides a simplistic layout where they can navigate to different features of the application. Those features include the "InvizaGarage" feature, the "Schedule" feature and the "Profile" feature for the dashboard and and of the Navbar pages.
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### InvizaGarage Page
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![InvizaGarage Page]()
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+The InvizaGarage page allows a user to add vehicles to their garage, edit any vehicles already in their garage and delete any vehicles in their garage. To add a vehicle, click on the free quote link. The free quote link and edit link will direct the user to a form page that is either pre-filled with a vehicles attributes or will be empty, for adding a new vehicle. Each form has a save and submit button respectively. 
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Profile Page
 
-## Learn More
+![Profile Page]()
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+The profile page displays a user's first name, last name, email and phone number. They can edit and save as necessary.
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Contact Page
 
-### Code Splitting
+![Contact Page]()
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+A user can enter their name, email and a message to send. When the user presses submit, the form will be sent to the business owner's email address. The phone number on the page also acts as an active tel link that will call the number on any device that allows phone calls.
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Tech Stack
 
-### Making a Progressive Web App
+### React | Node.js | Express | PostgreSQL | SQL | JWT | HTML | CSS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## API Documentation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- /api/auth
+- - POST - login a user
 
-### Deployment
+- /api/users
+- - POST - create/register a new user
+- - PUT - edit user information
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- /api/vehicles
+- - GET - get vehicles by user
+- - POST - save vehicles for a user
+- - PUT - edit vehicles for a user
 
-### `npm run build` fails to minify
+- /api/vehicles/:id
+- - DELETE - delete a vehicle by id
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- /api/contact
+- - POST - send email to business owner
+
+---
+
+```
+Created by @wellbrock-john
+```
