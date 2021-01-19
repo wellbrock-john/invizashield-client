@@ -22,6 +22,7 @@ class Navbar extends Component {
 
 	handleNotLoggedInClick = () => {
 		const { history } = this.props;
+		// eslint-disable-next-line
 		if (!TokenService.hasAuthToken() && history.location.pathname == "/") {
 			this.setState({ 
 				clicked: false,
