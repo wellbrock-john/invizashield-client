@@ -1,0 +1,22 @@
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+
+.image-slide {
+    width: calc(1rem + 30vw);
+    height: calc(1rem + 28vw);
+    justify-self: center;
+    border-radius: 300px;
+    border: 4px solid gold;
+}
+
+.fa-chevron-left {
+    font-size: 40vh;
+}
+
+.fa-chevron-right {
+    font-size: 40vh;
+}
