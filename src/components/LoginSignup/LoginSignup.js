@@ -31,10 +31,6 @@ class LoginSignup extends Component {
 		this.setState({ error: null });
 		if (this.state.form === "register") {
 			if (password.value !== confirmPassword.value) {
-				first_name.value = "";
-				last_name.value = "";
-				email.value = "";
-				phone_num.value = "";
 				password.value = "";
 				confirmPassword.value = "";
 				return this.setState({
@@ -60,10 +56,6 @@ class LoginSignup extends Component {
 						history.push("/dashboard");
 					});
 			} catch ({ error }) {
-				first_name.value = "";
-				last_name.value = "";
-				email.value = "";
-				phone_num.value = "";
 				password.value = "";
 				confirmPassword.value = "";
 				return this.setState({ error });
@@ -78,7 +70,6 @@ class LoginSignup extends Component {
 					history.push("/dashboard");
 				})
 				.catch((res) => {
-					email.value = "";
 					password.value = "";
 					this.setState({ error: res.error });
 				});
@@ -99,7 +90,7 @@ class LoginSignup extends Component {
 					className="form-div"
 				>
 					<form className="login-reg-form" onSubmit={this.handleLogin}>
-						{this.state.error && (<p className="error">{this.state.error}</p> )}
+						{this.state.error && <p className="error">{this.state.error}</p>}
 						{this.state.form === "login" ? (
 							""
 						) : (
@@ -137,7 +128,6 @@ class LoginSignup extends Component {
 							""
 						) : (
 							<input
-								
 								placeholder="Phone: 555-555-5555"
 								type="tel"
 								pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
@@ -146,9 +136,10 @@ class LoginSignup extends Component {
 								aria-label="Phone Number"
 								required
 							/>
-							
 						)}
-						<label><small>Demo Account: demo@demo.com</small></label>
+						<label>
+							<small>Demo Account: demo@demo.com</small>
+						</label>
 						<input
 							placeholder="Email"
 							type="email"
@@ -157,7 +148,9 @@ class LoginSignup extends Component {
 							aria-label="Email"
 							required
 						/>
-						<label><small>Demo Account: P@ssword1234</small></label>
+						<label>
+							<small>Demo Account: P@ssword1234</small>
+						</label>
 						<input
 							placeholder="Password"
 							type="password"
