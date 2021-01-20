@@ -10,8 +10,10 @@
 }
 
 .App {
-  overflow: scroll;
-  z-index: 1;
+  height: 100vh;
+  overflow: auto;
+  z-index: 10;
+  position: unset;
 }
 
 /*---------- @MEDIA MIN-WIDTH ----------*/
