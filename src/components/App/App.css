@@ -9,6 +9,10 @@
   letter-spacing: 0.5px;
 }
 
+.App {
+  overflow: scroll;
+}
+
 /*---------- @MEDIA MIN-WIDTH ----------*/
 @media all and (min-width: 500px) {
   .App {
