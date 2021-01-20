@@ -43,12 +43,7 @@ export default class App extends Component {
 					}
 					return res.json();
 				})
-				.then((user) => this.setState({ user })
-				.catch((err) => {
-					this.setState({
-						error: err.message,
-					})
-				}));
+				.then((user) => this.setState({ user }));
 
 			fetch(`${Config.API_ENDPOINT}/vehicles`, options)
 				.then((res) => {
@@ -57,12 +52,7 @@ export default class App extends Component {
 					}
 					return res.json();
 				})
-				.then((vehicles) => this.setState({ vehicles })
-				.catch((err) => {
-					this.setState({
-						error: err.message,
-					})
-				}));
+				.then((vehicles) => this.setState({ vehicles }));
 		},
 
 		handleSubmitUser: (e) => {

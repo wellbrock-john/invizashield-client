@@ -148,6 +148,7 @@ class LoginSignup extends Component {
 							/>
 							
 						)}
+						<label><small>To use the Demo account: demo@demo.com</small></label>
 						<input
 							placeholder="Email"
 							type="email"
@@ -156,6 +157,7 @@ class LoginSignup extends Component {
 							aria-label="Email"
 							required
 						/>
+						<label><small>To use the Demo account: P@ssword1234</small></label>
 						<input
 							placeholder="Password"
 							type="password"

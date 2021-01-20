@@ -52,7 +52,7 @@ render() {
         aria-label="Vehicle Color"
         required
       />
-      <label htmlFor="veh-paint-condition">Paint Condition</label>
+      <label htmlFor="veh-paint-condition">Paint Condition <small>A scale of 1 - 10. 1 being "Left in a barn for 20 years" and 10 being "We already did paint correction for you" *note that "brand new" is typically an 8*</small></label>
       <input
         className="vm-form-input"
         id="veh-paint-condition"

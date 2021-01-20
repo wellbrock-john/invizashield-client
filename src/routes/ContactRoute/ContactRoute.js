@@ -34,7 +34,7 @@ export default class ContactRoute extends Component {
 						<br />
 						<i className="fas fa-share">{" "}Call the owner, John Wellbrock, at</i>
 						<div>
-							<a href="tel:+1-513-703-4235">+1 (513) 703-4196</a>
+							<a href="tel:+1-513-703-4235">+1 (513) 703-4235</a>
 						</div>
 					</h4>
 				)}
