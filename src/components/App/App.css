@@ -12,7 +12,6 @@
 .App {
   height: 100vh;
   overflow: auto;
-  z-index: 10;
   position: unset;
 }
 
