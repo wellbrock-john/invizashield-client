@@ -6,6 +6,7 @@
   background-color: white;
   width: 80%;
   max-width: 500px;
+  margin-bottom: 10rem;
 }
 
 .add-vm-form {
@@ -17,6 +18,7 @@
   margin: 2rem calc(-10rem + 52vw);
   min-width: 300px;
   max-width: 500px;
+  margin-bottom: 10rem;
 }
 
 @media all and (min-width: 500px) {
