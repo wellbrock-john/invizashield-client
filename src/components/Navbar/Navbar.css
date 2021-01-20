@@ -29,6 +29,7 @@
 @media all and (min-width: 500px) {
 	.nav {
 		margin-bottom: 0;
+		position: relative;
 	}
 
 	.NavbarItems {
@@ -69,6 +70,7 @@
 		align-items: center;
 		font-size: 1.2rem;
 		top: 7rem !important;
+		padding-inline-start: 0;
 	}
 
 	.nav-links {
