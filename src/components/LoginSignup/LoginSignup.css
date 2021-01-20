@@ -53,6 +53,10 @@ small {
 	padding: 10px 0;
 }
 
+.error {
+	color: red;
+}
+
 /*---------- SKELETON CSS ----------*/
 
 /*---------- INPUT STYLING ----------*/

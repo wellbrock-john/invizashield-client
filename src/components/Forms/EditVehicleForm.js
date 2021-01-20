@@ -5,6 +5,11 @@ import "./Form.css";
 export default class EditVehicleForm extends Component {
   static contextType = Context;
 
+  onSubmit = (e, id) => {
+    this.context.handleSubmitVehicle(e, id);
+    this.props.history.push("/dashboard");
+  }
+
   render() {
     const id = this.props.id;
     return (
@@ -13,7 +18,7 @@ export default class EditVehicleForm extends Component {
         id="vm-edit-form"
         name="vm-form"
         aria-label="Edit vehicle form"
-        onSubmit={(e) => this.context.handleSubmitVehicle(e, id)}
+        onSubmit={e => this.onSubmit(e, id)}
       >
         <label htmlFor="veh-year">Year</label>
         <input

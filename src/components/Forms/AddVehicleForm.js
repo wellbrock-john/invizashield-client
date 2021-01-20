@@ -5,9 +5,14 @@ import "./Form.css";
 export default class AddVehicleForm extends Component {
   static contextType = Context;
 
+  onSubmit = (e) => {
+    this.context.handleSubmitVehicle(e);
+    this.props.history.push("/dashboard");
+  }
+
 render() {
   return (
-    <form className="add-vm-form" id="vm-form" name="vm-form" aria-label="Add vehicle form" onSubmit={e => this.context.handleSubmitVehicle(e)}>
+    <form className="add-vm-form" id="vm-form" name="vm-form" aria-label="Add vehicle form" onSubmit={e => this.onSubmit(e)}>
       <label htmlFor="veh-year">Year</label>
       <input
         className="vm-form-input"

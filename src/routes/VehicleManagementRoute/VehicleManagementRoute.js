@@ -17,7 +17,7 @@ export default class VehicleManagementRoute extends Component {
 				{vehicle &&
 				vehicle.id &&
 				vehicle.id.toString() === this.props.match.params.id ? (
-					<EditVehicleForm {...vehicle} />
+					<EditVehicleForm {...vehicle} {...this.props}/>
 				) : (
 					<h2>Loading Your Vehicle...</h2>
 				)}

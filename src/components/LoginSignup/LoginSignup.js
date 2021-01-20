@@ -171,7 +171,7 @@ class LoginSignup extends Component {
 						) : (
 							<small>
 								<strong>
-									Password must be more than 7 characters and contain at least
+									Password must be more than 8 characters and contain at least
 									<br />
 									one uppercase, lowercase, number and special character
 								</strong>
