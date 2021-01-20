@@ -18,7 +18,7 @@ body {
   background-size: 100vw 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-background-repear: no-repeat;
+  -webkit-background-repeat: no-repeat;
   -moz-background-repeat: no-repeat;
   -o-background-repeat: no-repeat;
   background-repeat: no-repeat;
