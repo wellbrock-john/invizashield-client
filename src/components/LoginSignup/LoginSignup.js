@@ -91,7 +91,7 @@ class LoginSignup extends Component {
 				<div
 					style={{
 						transform: `translate(0px, ${
-							this.state.form === "login" ? 60 : 130
+							this.state.form === "login" ? 20 : 130
 						}px)`,
 						display: "flex",
 						flexDirection: "column",
@@ -148,7 +148,7 @@ class LoginSignup extends Component {
 							/>
 							
 						)}
-						<label><small>To use the Demo account: demo@demo.com</small></label>
+						<label><small>Demo Account: demo@demo.com</small></label>
 						<input
 							placeholder="Email"
 							type="email"
@@ -157,7 +157,7 @@ class LoginSignup extends Component {
 							aria-label="Email"
 							required
 						/>
-						<label><small>To use the Demo account: P@ssword1234</small></label>
+						<label><small>Demo Account: P@ssword1234</small></label>
 						<input
 							placeholder="Password"
 							type="password"
@@ -197,7 +197,7 @@ class LoginSignup extends Component {
 				<div
 					style={{
 						transform: `translate(0px, ${
-							this.state.form === "login" ? -60 : -480
+							this.state.form === "login" ? -60 : -490
 						}px)`,
 						display: "flex",
 						flexDirection: "column",

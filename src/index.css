@@ -26,7 +26,6 @@ body {
   -moz-background-attatchment: fixed;
   -o-background-attatchment: fixed;
   background-attachment: fixed;
-  /* background-size: 100vw 100vh; */
 }
 
 #root {
