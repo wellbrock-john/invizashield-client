@@ -2,21 +2,50 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90%;
+    height: 50%;
 }
 
 .image-slide {
-    width: calc(1rem + 30vw);
-    height: calc(1rem + 28vw);
+    width: calc(2rem + 40vw);
+    height: calc(2rem + 40vw);
     justify-self: center;
     border-radius: 300px;
-    border: 4px solid gold;
+    border: 4px solid ivory;
 }
 
 .fa-chevron-left {
-    font-size: 40vh;
+    font-size: calc(1rem + 12vw);
+    color: ivory;
 }
 
 .fa-chevron-right {
-    font-size: 40vh;
+    font-size: calc(1rem + 12vw);
+    color: ivory;
+}
+
+@media all and (min-width: 500px) {
+    .carousel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90%;
+    }
+
+    .image-slide {
+        width: calc(1rem + 30vw);
+        height: calc(1rem + 30vw);
+        justify-self: center;
+        border-radius: 300px;
+        border: 4px solid gold;
+    }
+    
+    .fa-chevron-left {
+        font-size: calc(1rem + 12vw);
+        color: gold;
+    }
+    
+    .fa-chevron-right {
+        font-size: calc(1rem + 12vw);
+        color: gold;
+    }
 }
