@@ -8,7 +8,7 @@ email: demo@demo.com
 password: P@ssword1234
 ```
 
-[Live Site]()
+[Live Site](https://invizashield-client.vercel.app/)
 
 [Frontend Repo](https://github.com/wellbrock-john/ivizashield-client)
 
@@ -25,6 +25,7 @@ password: P@ssword1234
 ```
 When you get to the landing page, there are instructions for signing up, logging into your account or using the Demo account. In the navbar, the Services, Gallery and Contact Us links are open to public use. The InvizaGarage link will scroll to the registration/login form if a user is not logged in and will display a message explaining that they must create an account or log in to view their InvizaGarage.
 ```
+
 ![Landing Page](https://user-images.githubusercontent.com/68931297/105114282-8ea88300-5a94-11eb-81cc-d2e2f1da7741.png)
 
 ![Login](https://user-images.githubusercontent.com/68931297/105114463-f1018380-5a94-11eb-9aa6-8276f038674c.png)
@@ -32,9 +33,11 @@ When you get to the landing page, there are instructions for signing up, logging
 ---
 
 ### Dashboard Page
+
 ```
 The user's dashboard page provides a simplistic layout where they can navigate to different features of the application. Those features include the "InvizaGarage" feature, the "Schedule" feature and the "Profile" feature for the dashboard and any of the Navbar pages.
 ```
+
 ![Dashboard Garage](https://user-images.githubusercontent.com/68931297/105114638-489fef00-5a95-11eb-8c4a-a8d86aba4c32.png)
 
 ![Dashboard Schedule](https://user-images.githubusercontent.com/68931297/105114657-4fc6fd00-5a95-11eb-99ab-28c78f7af0b9.png)
@@ -44,9 +47,11 @@ The user's dashboard page provides a simplistic layout where they can navigate t
 ---
 
 ### InvizaGarage Page
+
 ```
-The InvizaGarage page allows a user to add vehicles to their garage, edit any vehicles already in their garage and delete any vehicles in their garage. To add a vehicle, click on the free quote link. The free quote link and edit link will direct the user to a form page that is either pre-filled with a vehicle's attributes or will be empty, for adding a new vehicle. Each form has a button that will send a request to the server. 
+The InvizaGarage page allows a user to add vehicles to their garage, edit any vehicles already in their garage and delete any vehicles in their garage. To add a vehicle, click on the free quote link. The free quote link and edit link will direct the user to a form page that is either pre-filled with a vehicle's attributes or will be empty, for adding a new vehicle. Each form has a button that will send a request to the server.
 ```
+
 ![2021-01-19 (14)](https://user-images.githubusercontent.com/68931297/105115519-f2cc4680-5a96-11eb-98f8-d9277074a784.png)
 
 ![2021-01-19 (8)](https://user-images.githubusercontent.com/68931297/105115272-7b96b280-5a96-11eb-9be5-07a2e91aab29.png)
@@ -56,9 +61,11 @@ The InvizaGarage page allows a user to add vehicles to their garage, edit any ve
 ---
 
 ### Contact Page
+
 ```
 A user can enter their name, email and a message to send. When the user presses submit, the form will be sent to the business owner's email address. The phone number on the page also acts as an active tel link that will call the number on any device that allows phone calls.
 ```
+
 ![2021-01-19 (12)](https://user-images.githubusercontent.com/68931297/105115707-4ccd0c00-5a97-11eb-8398-2c9bdbd19068.png)
 
 ---

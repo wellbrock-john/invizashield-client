@@ -15,28 +15,39 @@ export default class ContactRoute extends Component {
 					<h2 className="greeting">Looking to protect your investment?</h2>
 				)}
 				{user && user.id ? (
-					<h4 className="contact-body">
-						If you need to reach us, you can send a quick and easy email down
-						below or you can call or text John at
-						<div>
+					<section>
+						<h4 className="contact-body">
+							If you need to reach us, you can send a quick and easy email down
+							below or you can call or text John at
+							<br />
 							<a href="tel:+1-513-703-4235">+1 (513) 703-4235</a>
-						</div>
-					</h4>
+						</h4>
+					</section>
 				) : (
-					<h4 className="contact-body">
-						<i className="fas fa-share"> {" "}Fill out a free quote request on our services page</i>
-						<br />
-						
-						<br />
-						<i className="fas fa-share">{" "}Send us an email below</i>
-						<br />
-						
-						<br />
-						<i className="fas fa-share">{" "}Call the owner, John Wellbrock, at</i>
-						<div>
-							<a href="tel:+1-513-703-4235">+1 (513) 703-4235</a>
+					<section>
+						<div className="contact-body">
+							<div>
+								<i className="fas fa-share">
+									{" "}
+									Fill out a free quote request on our services page
+								</i>
+								<br />
+
+								<br />
+								<i className="fas fa-share"> Send us an email below</i>
+								<br />
+
+								<br />
+								<i className="fas fa-share">
+									{" "}
+									Call the owner, John Wellbrock, at
+								</i>
+								<p>
+									<a href="tel:+1-513-703-4235">+1 (513) 703-4235</a>
+								</p>
+							</div>
 						</div>
-					</h4>
+					</section>
 				)}
 				<section>
 					<div className="contact-form-div">

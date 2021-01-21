@@ -16,7 +16,7 @@ const ContactForm = () => {
 		let response = await fetch(`${Config.API_ENDPOINT}/contact`, {
 			method: "POST",
 			headers: {
-				"Content-Type": "application/json;charset=utf-8",
+				"Content-Type": "application/json",
 			},
 			body: JSON.stringify(details),
 		});
