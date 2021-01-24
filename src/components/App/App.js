@@ -87,12 +87,12 @@ export default class App extends Component {
         color: color.value,
         paintCondition: paintCondition.value,
         coverage: coverage.value,
-	  };
+      };
       this.setState({ error: null });
       if (e.target.id === "vm-edit-form") {
-        AuthApiService.putVehicle(vehicle, id)
+        AuthApiService.putVehicle(vehicle, id);
       } else {
-        AuthApiService.postVehicle(vehicle)
+        AuthApiService.postVehicle(vehicle);
       }
     },
 
@@ -105,6 +105,7 @@ export default class App extends Component {
     logout: () => {
       this.setState({
         user: {},
+        vehicles: [],
       });
     },
   };
@@ -115,6 +116,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+    // only calling the getData function after the user has logged in to avoid unnecessary and potentially problematic api calls
     if (TokenService.hasAuthToken()) {
       this.state.getData();
     }
@@ -145,6 +147,7 @@ export default class App extends Component {
                 component={VehicleManagementRoute}
               />
 
+              {/* We specifically want these routes to be accessible to the public */}
               <Route exact path={"/"} component={LandingRoute} />
               <Route path={"/services"} component={ServicesRoute} />
               <Route path={"/gallery"} component={GalleryRoute} />

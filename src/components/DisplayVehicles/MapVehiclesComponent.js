@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function MapVehicles({...props}) {
+export default function MapVehicles({ ...props }) {
   return (
     <li className="vehicle-data">
       <p className="data--primary">

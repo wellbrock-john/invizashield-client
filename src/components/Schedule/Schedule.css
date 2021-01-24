@@ -1,17 +1,17 @@
 .greeting-div {
-	height: 10%;
-	color: white;
-	text-align: center;
+  height: 10%;
+  color: white;
+  text-align: center;
 }
 
 .dashboard-content {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 @media all and (min-width: 500px) {
-	.Schedule {
-		margin-left: 1rem;
-		margin-right: 1rem;
-	}
+  .Schedule {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }

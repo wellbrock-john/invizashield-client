@@ -26,7 +26,7 @@ class LandingRoute extends Component {
         <div className="paragraph-plus-form-div">
           <section>
             <article>
-				<h3 className="fact-check">Fact Check:</h3>
+              <h3 className="fact-check">Fact Check:</h3>
               <span className="article-span">
                 Setting the gold standard for PPF installation for over 15 years{" "}
                 <i className="fas fa-check"></i>

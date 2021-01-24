@@ -34,17 +34,11 @@ export default class Carousel extends Component {
   render() {
     return (
       <div className="carousel">
-        <Arrow
-          direction="left"
-          clickFunction={this.previousSlide}
-        />
+        <Arrow direction="left" clickFunction={this.previousSlide} />
 
         <ImageSlide url={imgUrls[this.state.currentImageIndex]} />
 
-        <Arrow
-          direction="right"
-          clickFunction={this.nextSlide}
-        />
+        <Arrow direction="right" clickFunction={this.nextSlide} />
       </div>
     );
   }

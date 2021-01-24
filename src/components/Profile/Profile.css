@@ -1,32 +1,32 @@
 .Profile {
-	margin-top: 1.7rem;
+  margin-top: 1.7rem;
 }
 
 .profile-form {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	color: white;
-	font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+  font-size: 1.5rem;
 }
 
 .profile-form-input {
-	width: 13.5rem;
+  width: 13.5rem;
 }
 
 .profile-save-btn {
-	width: 13.5rem !important;
-	margin-top: 2rem !important;
-	background-color: gold !important;
+  width: 13.5rem !important;
+  margin-top: 2rem !important;
+  background-color: gold !important;
 }
 
 .profile-save-btn:hover {
-	background-color: transparent !important;
-	color: white !important;
+  background-color: transparent !important;
+  color: white !important;
 }
 
 .profile-form-phone-num {
-	width: 12.6rem;
-	margin-left: 4.5px !important;
-	padding-left: 10px;
+  width: 12.6rem;
+  margin-left: 4.5px !important;
+  padding-left: 10px;
 }

@@ -1,36 +1,36 @@
 .Contact {
-	background-color: rgba(0, 0, 0, 0.507);
+  background-color: rgba(0, 0, 0, 0.507);
 }
 
 .greeting,
 .contact-body {
-	color: white;
-	text-align: center;
-	margin: 20px;
+  color: white;
+  text-align: center;
+  margin: 20px;
 }
 
 .contact-form {
-	max-width: 500px !important;
-	width: 100%;
+  max-width: 500px !important;
+  width: 100%;
 }
 
 .contact-form-div {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
-	color: gold;
+  color: gold;
 }
 
 @media all and (min-width: 500px) {
-	label {
-		text-align: left;
-		padding-left: 1rem;
-	}
+  label {
+    text-align: left;
+    padding-left: 1rem;
+  }
 
-	#message {
-		margin: 0 .3rem;
-	}
+  #message {
+    margin: 0 0.3rem;
+  }
 }

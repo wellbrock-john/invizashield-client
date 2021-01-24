@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import Context from "../../Context";
 import AuthApiService from "../../services/auth-api-service";
 import MapVehicles from "./MapVehiclesComponent";
@@ -10,6 +10,7 @@ class DisplayVehicles extends Component {
 
   handleDelete = (id) => {
     AuthApiService.deleteVehicle(id);
+    // this will re-render the page to display the new list of vehicles excluding the one that was deleted
     this.context.setVehiclesAfterDelete(id);
   };
 
@@ -20,7 +21,14 @@ class DisplayVehicles extends Component {
       <div className="DisplayVehicles">
         <ul className="vehicles-list">
           {vehicles.map((vehicle, index) => {
-            return <MapVehicles {...vehicle} key={index} onSubmit={(id) => this.handleDelete(id)}/>;
+            // breaking down the component here to keep the code looking cleaner
+            return (
+              <MapVehicles
+                {...vehicle}
+                key={index}
+                onSubmit={(id) => this.handleDelete(id)}
+              />
+            );
           })}
         </ul>
         <a className="add-vehicle-link" href="/vehicle-management/">

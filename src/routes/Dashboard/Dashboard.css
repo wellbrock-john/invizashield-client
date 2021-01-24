@@ -1,119 +1,119 @@
 #container {
-	display: flex;
-	flex-direction: row-reverse;
-	justify-content: right;
-	background-color: rgba(0, 0, 0, 0.39);
-	border-radius: 3px;
-	border-top: 3px solid gold;
-	padding-left: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: right;
+  background-color: rgba(0, 0, 0, 0.39);
+  border-radius: 3px;
+  border-top: 3px solid gold;
+  padding-left: 10px;
 }
 
 .dashboard-main {
-	width: 100%;
+  width: 100%;
 }
 
 .sidebar {
-	color: ivory;
-	padding-left: 1rem;
-	margin-top: 1rem;
-	height: 100%;
+  color: ivory;
+  padding-left: 1rem;
+  margin-top: 1rem;
+  height: 100%;
 }
 
 .dashboard-ul {
-	list-style: none;
-	padding-left: 1rem;
-	margin: 0 7px 0 0;
+  list-style: none;
+  padding-left: 1rem;
+  margin: 0 7px 0 0;
 }
 
 .dash-li-btn {
-	padding: 0;
-	margin: 0 5px 10px 0;
-	width: 100%;
-	border-top: none;
-	border-right: none;
-	border-left: none;
-	border-width: 2px;
-	border-radius: 15px;
-	color: ivory;
+  padding: 0;
+  margin: 0 5px 10px 0;
+  width: 100%;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-width: 2px;
+  border-radius: 15px;
+  color: ivory;
 }
 
 .dash-li-btn:active {
-	color: gold;
+  color: gold;
 }
 
 .dash-li-btn:hover {
-	color: gold;
+  color: gold;
 }
 
 .dashboard-content {
-	margin-top: 3.5rem;
+  margin-top: 3.5rem;
 }
 
 @media all and (min-width: 500px) {
-	#container {
-		display: flex;
-		flex-direction: row;
-		justify-content: left;
-		margin: 5% calc(-1rem + 15vw);
-		min-height: 500px;
-		height: 100%;
-		border-top: none;
-		background-color: transparent;
-	}
+  #container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin: 5% calc(-1rem + 15vw);
+    min-height: 500px;
+    height: 100%;
+    border-top: none;
+    background-color: transparent;
+  }
 
-	.sidebar {
-		width: 30%;
-		height: auto;
-		margin: 0;
-		padding: 0;
-	}
+  .sidebar {
+    width: 30%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
 
-	.dashboard-ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
+  .dashboard-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-	.dashboard-ul li {
-		display: flex;
-		justify-content: flex-end;
-	}
+  .dashboard-ul li {
+    display: flex;
+    justify-content: flex-end;
+  }
 
-	.dash-li-btn {
-		margin-right: 0;
-		background-color: gold;
-		color: black;
-		line-height: 3rem;
-		border-radius: 5px 0 0 5px;
-		padding-left: 10px;
-		text-align: left;
-		width: 100%;
-		max-width: 150px;
-		border: none;
-	}
+  .dash-li-btn {
+    margin-right: 0;
+    background-color: gold;
+    color: black;
+    line-height: 3rem;
+    border-radius: 5px 0 0 5px;
+    padding-left: 10px;
+    text-align: left;
+    width: 100%;
+    max-width: 150px;
+    border: none;
+  }
 
-	.dash-li-btn:active {
-		background-color: black;
-		color: ivory;
-	}
-	
-	.dash-li-btn:hover {
-		background-color: black;
-		color: ivory;
-	}
+  .dash-li-btn:active {
+    background-color: black;
+    color: ivory;
+  }
 
-	.dash-li-btn:visited {
-		background-color: black;
-		color: ivory;
-	}
+  .dash-li-btn:hover {
+    background-color: black;
+    color: ivory;
+  }
 
-	.dashboard-main {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		max-width: 520px;
-		border: solid gold 8px;
-		border-radius: 0 10px 10px 0;
-		background-color: black;
-	}
+  .dash-li-btn:visited {
+    background-color: black;
+    color: ivory;
+  }
+
+  .dashboard-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 520px;
+    border: solid gold 8px;
+    border-radius: 0 10px 10px 0;
+    background-color: black;
+  }
 }

@@ -1,8 +1,8 @@
 .vm-form {
-	border: 1px solid lightgray;
-	border-radius: 5px;
-	display: flex;
-	flex-direction: column;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
   background-color: white;
   width: 80%;
   max-width: 500px;
@@ -10,10 +10,10 @@
 }
 
 .add-vm-form {
-	border: 1px solid lightgray;
-	border-radius: 5px;
-	display: flex;
-	flex-direction: column;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
   background-color: white;
   margin: 2rem calc(-10rem + 52vw);
   min-width: 300px;

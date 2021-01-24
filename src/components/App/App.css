@@ -20,13 +20,12 @@
 @media all and (min-width: 500px) {
   .App {
     min-height: 100vh;
-	text-align: center;
-	background-color: rgba(0, 0, 0, 0.603);
-
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.603);
   }
 
   #Route {
-	border-top: none;
-	background-color: transparent;
+    border-top: none;
+    background-color: transparent;
   }
 }

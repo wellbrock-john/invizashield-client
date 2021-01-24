@@ -1,37 +1,37 @@
 .arch-div {
-	text-align: center;
-	margin-bottom: 2.5rem;
-	border-top: 1.5px solid gold;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  border-top: 1.5px solid gold;
 }
 
 .services-div {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .vid-description {
-	color: white;
-	letter-spacing: 1px;
+  color: white;
+  letter-spacing: 1px;
 }
 
 .cp-link {
-	margin-top: 4rem;
-	color: rgb(228, 0, 121);
+  margin-top: 4rem;
+  color: rgb(228, 0, 121);
 }
 
 @media all and (min-width: 500px) {
-	.arch-div {
-		border-top: none;
-		margin-bottom: 8rem;
-	}
+  .arch-div {
+    border-top: none;
+    margin-bottom: 8rem;
+  }
 }
 
 @media all and (min-width: 1000px) {
-	.services-div {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-around;
-	}
+  .services-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
