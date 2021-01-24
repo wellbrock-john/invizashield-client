@@ -72,8 +72,8 @@ const AuthApiService = {
 			method: "PUT",
 			headers: {
 				Authorization: `Bearer ${TokenService.getAuthToken()}`,
-				Accept: "application/json; charset=UTF-8",
-				"content-type": "application/json; charset=UTF-8",
+				Accept: "application/json",
+				"content-type": "application/json",
 			},
 			body: JSON.stringify(user, id),
 		}).then((res) => {

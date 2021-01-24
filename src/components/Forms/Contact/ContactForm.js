@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Config from "../../../config";
 import "./ContactForm.css";
 
 const ContactForm = () => {
@@ -12,10 +13,10 @@ const ContactForm = () => {
 			email: email.value,
 			message: message.value,
 		};
-		let response = await fetch("http://localhost:8000/api/contact", {
+		let response = await fetch(`${Config.API_ENDPOINT}/contact`, {
 			method: "POST",
 			headers: {
-				"Content-Type": "application/json;charset=utf-8",
+				"Content-Type": "application/json",
 			},
 			body: JSON.stringify(details),
 		});
