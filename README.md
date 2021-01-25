@@ -109,7 +109,7 @@ Open endpoints require no Authentication.
 - - Input
 - - - first_name
 - - - last_name
-- - - phone_num (integer)
+- - - phone_num
 - - - email
 - - - password
 - - Output
@@ -143,12 +143,12 @@ Closed endpoints require a valid Token to be included in the header of the reque
 - - Input
 - - - first_name
 - - - last_name
-- - - phone_num (integer)
+- - - phone_num 
 - - - email
 - - Output
 - - - first_name
 - - - last_name
-- - - phone_num (integer)
+- - - phone_num 
 - - - email
 
 ### /api/vehicles
