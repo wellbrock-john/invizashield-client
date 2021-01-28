@@ -1,0 +1,24 @@
+.packages-container {
+    text-align: left;
+    margin:  1rem;
+    border: 4px solid gold;
+    border-radius: 5px;
+}
+
+.packages-h1 {
+    width: 100%;
+    line-height: 2;
+    text-align: center;
+    background-color: gold;
+    color: black;
+    margin-top: 0;
+}
+
+.tier-container {
+    padding: 0 1rem;
+}
+
+.package-img {
+    height: 200px;
+    width: 250px;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactPlayer from "react-player";
 import carzmedicsLogo from "../../components/images/Logo/z-logo-1_1.png";
+import Packages from "../../components/Packages/Packages";
 import "./ServicesRoute.css";
 
 export default class ServicesRoute extends Component {
@@ -22,7 +23,7 @@ export default class ServicesRoute extends Component {
           </h3>
           <h5>Paint Protection Film (clear bra)</h5>
           <div className="services-div">
-            <div>
+            <div className="vid-div">
               <p className="vid-description">
                 Installation <i className="fas fa-long-arrow-alt-down" />
               </p>
@@ -33,7 +34,8 @@ export default class ServicesRoute extends Component {
               />
             </div>
             <br />
-            <div>
+            <Packages />
+            <div className="vid-div">
               <p className="vid-description">
                 Removal <i className="fas fa-long-arrow-alt-down" />
               </p>
