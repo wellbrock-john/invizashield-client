@@ -14,6 +14,11 @@
     margin-top: 0;
 }
 
+.tier-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
 .tier-container {
     padding: 0 1rem;
 }
@@ -21,4 +26,15 @@
 .package-img {
     height: 200px;
     width: 250px;
+}
+
+.coverage-list-item {
+    max-width: 20rem;
+}
+
+@media all and (min-width: 500px) {
+    .tier-wrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }
