@@ -21,16 +21,18 @@ export default function Packages() {
           </div>
           <div className="tier-sub-container">
             <h2 className="tier-header">Coverage Details</h2>
-            <ul className="coverage-list">
+            <ul className="tier-one-coverage-list">
               <li className="coverage-list-item">
-                Partial Hood and Fender Coverage
-              </li>
-              <li className="coverage-list-item">Front Bumper Coverage</li>
-              <li className="coverage-list-item">
-                Mirror and Door-cup Coverage
+                <p>Partial Hood and Fender Coverage</p>
               </li>
               <li className="coverage-list-item">
-                Additional Coverage Upon Request
+                <p>Front Bumper Coverage</p>
+              </li>
+              <li className="coverage-list-item">
+                <p>Mirror and Door-cup Coverage</p>
+              </li>
+              <li className="coverage-list-item">
+                <p>Additional Coverage Upon Request</p>
                 <br />
                 <small>(Prices & options vary*)</small>
               </li>
@@ -49,16 +51,18 @@ export default function Packages() {
           </div>
           <div className="tier-sub-container">
             <h2 className="tier-header">Coverage Details</h2>
-            <ul className="coverage-list">
+            <ul className="tier-two-coverage-list">
               <li className="coverage-list-item">
-                Full Hood and Fender Coverage
-              </li>
-              <li className="coverage-list-item">Front Bumper Coverage</li>
-              <li className="coverage-list-item">
-                Headlights, Mirror and Door-cup Coverage
+                <p>Full Hood and Fender Coverage</p>
               </li>
               <li className="coverage-list-item">
-                Additional Coverage Upon Request
+                <p>Front Bumper Coverage</p>
+              </li>
+              <li className="coverage-list-item">
+                <p>Headlights, Mirror and Door-cup Coverage</p>
+              </li>
+              <li className="coverage-list-item">
+                <p>Additional Coverage Upon Request</p>
                 <br />
                 <small>(Prices & options vary)</small>
               </li>
@@ -77,21 +81,27 @@ export default function Packages() {
           </div>
           <div className="tier-sub-container">
             <h2 className="tier-header">Coverage Details</h2>
-            <ul className="coverage-list">
+            <ul className="tier-three-coverage-list">
               <li className="coverage-list-item">
-                Full Hood and Fender Coverage
+                <p>Full Hood and Fender Coverage</p>
               </li>
               <li className="coverage-list-item">
-                Front and Rear Bumper Coverage
+                <p>Front and Rear Bumper Coverage</p>
               </li>
               <li className="coverage-list-item">
-                Mirror and Full Door Coverage
+                <p>Mirror and Full Door Coverage</p>
               </li>
-              <li className="coverage-list-item">Roof Coverage</li>
-              <li className="coverage-list-item">Full Rear Fender Coverage</li>
-              <li className="coverage-list-item">Hatch Coverage</li>
               <li className="coverage-list-item">
-                Coverage for All Miscellaneous Panels
+                <p>Roof Coverage</p>
+              </li>
+              <li className="coverage-list-item">
+                <p>Full Rear Fender Coverage</p>
+              </li>
+              <li className="coverage-list-item">
+                <p>Hatch Coverage</p>
+              </li>
+              <li className="coverage-list-item">
+                <p>Coverage for All Miscellaneous Panels</p>
                 <br />
                 <small>(Prices & options vary*)</small>
               </li>

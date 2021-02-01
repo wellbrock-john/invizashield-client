@@ -28,8 +28,31 @@
     width: 250px;
 }
 
+.tier-one-coverage-list {
+    list-style-image: url("../images/original_custom_icons/Asset_19.svg");
+}
+
+.tier-two-coverage-list {
+    list-style-image: url("../images/original_custom_icons/Asset_20.svg");
+}
+
+.tier-three-coverage-list {
+    list-style-image: url("../images/original_custom_icons/Asset_21.svg");
+}
+
 .coverage-list-item {
+    position: relative;
     max-width: 20rem;
+}
+
+.coverage-list-item::marker {
+    font-size: 5rem;
+}
+
+.coverage-list-item p {
+    margin: 0;
+    position: absolute;
+    top: 3.5rem;
 }
 
 @media all and (min-width: 500px) {
